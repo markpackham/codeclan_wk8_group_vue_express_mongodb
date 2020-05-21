@@ -12,12 +12,31 @@ import MainFooter from "./components/layouts/MainFooter";
 export default {
   name: "app",
   data() {},
-  methods: {},
+  methods: {
+    handleError: function(error) {
+      switch (error) {
+        case "401":
+          console.log("Page access unauthorized");
+          break;
+        case "403":
+          console.log("Page access forbidden");
+          break;
+        case "404":
+          console.log("Page not found", error.status);
+          break;
+        case "500":
+          console.log("Server down");
+          break;
+        default:
+          console.log(error.status);
+      }
+    },
+  },
   mounted() {},
   components: {
     "main-header": MainHeader,
-    "main-footer": MainFooter
-  }
+    "main-footer": MainFooter,
+  },
 };
 </script>
 

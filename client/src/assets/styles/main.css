@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -26,4 +27,16 @@ h3,
 h4,
 .main-footer {
   padding: 1rem;
+}
+
+button {
+  padding: 0.3rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
