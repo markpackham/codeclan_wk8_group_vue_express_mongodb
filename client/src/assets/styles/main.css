@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-header,
+.main-footer {
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+.main-footer {
+  padding: 1rem;
+}

@@ -1,11 +1,25 @@
 <template>
   <div>
-    <p>Copyright 2020</p>
+    <div class="main-footer">Copyright {{getTheYear()}}</div>
+    <hr />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "main-footer",
+  data() {
+    return {};
+  },
+  methods: {
+    getTheYear: function() {
+      return new Date().getFullYear();
+    }
+  },
+  mounted() {
+    this.getTheYear();
+  }
+};
 </script>
 
 <style>

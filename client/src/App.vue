@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div id="app">
     <main-header></main-header>
+    <div class="main-container"></div>
     <main-footer></main-footer>
   </div>
 </template>
@@ -21,4 +22,5 @@ export default {
 </script>
 
 <style>
+@import "./assets/styles/main.css";
 </style>
