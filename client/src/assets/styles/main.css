@@ -1,5 +1,7 @@
 :root {
   --main-text-color: #000;
+  --secondary-text-color: #52527a;
+  --tertiary-text-color: #800080;
   --main-bg-color: #fff;
 }
 
@@ -35,8 +37,14 @@ h1,
 h2,
 h3,
 h4,
-.main-footer {
+label,
+.main-footer,
+.main-container {
   padding: 1rem;
+}
+
+input {
+  margin: 0.5rem;
 }
 
 button {
@@ -46,4 +54,15 @@ button {
 }
 
 button:hover {
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-section {
+    max-width: 87%;
+  }
 }
