@@ -6,7 +6,7 @@
     <img class="flag" name="flag" :src="country.flag" />
     <h4>Languages:</h4>
     <ul>
-      <li v-for="(lang) in country.languages">{{lang.name}}</li>
+      <li v-for="(lang, index) in country.languages" :key="index">{{lang.name}}</li>
     </ul>
   </div>
 </template>
