@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <main-header></main-header>
-    <div class="main-container"></div>
+    <div class="main-container">
+      <country-detail></country-detail>
+    </div>
     <main-footer></main-footer>
   </div>
 </template>
@@ -9,6 +11,7 @@
 <script>
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
+import CountryDetail from "./components/CountryDetail";
 export default {
   name: "app",
   data() {},
@@ -30,13 +33,14 @@ export default {
         default:
           console.log(error.status);
       }
-    },
+    }
   },
   mounted() {},
   components: {
     "main-header": MainHeader,
     "main-footer": MainFooter,
-  },
+    "country-detail": CountryDetail
+  }
 };
 </script>
 
