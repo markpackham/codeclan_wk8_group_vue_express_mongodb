@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import CountryService from "./services/CountryService"
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
 import CountryDetail from "./components/CountryDetail";

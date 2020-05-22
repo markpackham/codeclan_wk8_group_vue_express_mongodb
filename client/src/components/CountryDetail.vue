@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <h1>Country Detail Placeholder</h1>
+  <div class="country-detail">
+      <h3>Country Detial Placeholder</h3>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
   </div>
 </template>
 
