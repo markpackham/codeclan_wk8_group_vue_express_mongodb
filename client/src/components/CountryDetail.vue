@@ -1,5 +1,5 @@
 <template>
-  <div class="country-detail" v-if="country">
+  <div class="country-detail modal" v-if="country">
     <h3>{{country.name}} aka {{country.nativeName}}</h3>
     <p>Population: {{country.population}} and Area: {{country.area}}</p>
     <p>Captial: {{country.capital}}</p>
