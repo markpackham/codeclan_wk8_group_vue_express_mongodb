@@ -12,7 +12,7 @@ import { eventBus } from "../main.js";
 import ListComponent from "./ListComponent.vue";
 export default {
   name: "eastern-europe-list",
-  props: ["country", "countries"],
+  props: ["countries"],
   components: {
     "list-component": ListComponent
   },
