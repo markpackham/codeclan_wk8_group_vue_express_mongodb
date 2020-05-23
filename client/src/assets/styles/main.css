@@ -3,6 +3,10 @@
   --secondary-text-color: #52527a;
   --tertiary-text-color: #800080;
   --main-bg-color: #fff;
+  --header-bg-color: #fff;
+  --btn-danger-text-color: #fff;
+  --btn-danger-bg-color: #94180a;
+  --btn-edit-bg-color: #1497b8;
 }
 
 * {
@@ -13,6 +17,7 @@
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1rem;
   color: var(--main-text-color);
   background-color: var(--main-bg-color);
 }
@@ -28,11 +33,6 @@ a {
 a:hover {
 }
 
-.main-header,
-.main-footer {
-  text-align: center;
-}
-
 h1,
 h2,
 h3,
@@ -41,6 +41,23 @@ label,
 .main-footer,
 .main-container {
   padding: 1rem;
+}
+
+.main-header,
+.main-footer {
+  text-align: center;
+  background-color: var(---header-bg-color);
+}
+
+.main-footer {
+  font-style: italic;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
 }
 
 input {
@@ -54,6 +71,16 @@ button {
 }
 
 button:hover {
+}
+
+.btn-danger {
+  color: var(--btn-danger-text-color);
+  background-color: var(--btn-danger-bg-color);
+}
+
+.btn-edit {
+  color: var(--btn-danger-text-color);
+  background-color: var(--btn-edit-bg-color);
 }
 
 /* Modal */

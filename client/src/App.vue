@@ -2,6 +2,7 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
+      <europe-subregion-list></europe-subregion-list>
       <country-detail></country-detail>
     </div>
     <main-footer></main-footer>
@@ -9,10 +10,11 @@
 </template>
 
 <script>
-import CountryService from "./services/CountryService"
+import CountryService from "./services/CountryService";
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
 import CountryDetail from "./components/CountryDetail";
+import EuropeSubRegionList from "./components/EuropeSubRegionList.vue";
 export default {
   name: "app",
   data() {},
@@ -40,7 +42,8 @@ export default {
   components: {
     "main-header": MainHeader,
     "main-footer": MainFooter,
-    "country-detail": CountryDetail
+    "country-detail": CountryDetail,
+    "europe-subregion-list": EuropeSubRegionList
   }
 };
 </script>
