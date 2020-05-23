@@ -22,7 +22,7 @@ import EasternEuropeList from "./components/EasternEuropeList";
 import SouthernEuropeList from "./components/SouthernEuropeList";
 import WesternEuropeList from "./components/WesternEuropeList";
 import NorthernEuropeList from "./components/NorthernEuropeList";
-import EuropeSubRegionList from "./components/EuropeSubRegionList.vue";
+import EuropeSubRegionList from "./components/EuropeSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 export default {
   name: "app",
