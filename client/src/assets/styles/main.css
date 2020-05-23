@@ -105,7 +105,30 @@ button:hover {
 .northern-europe-list,
 .eastern-europe-list,
 .western-europe-list,
-.southern-europe-list {
+.southern-europe-list,
+.africa-subregion-list,
+.northern-africa-list,
+.middle-africa-list,
+.western-africa-list,
+.southern-africa-list,
+.eastern-africa-list,
+.asia-subregion-list,
+.eastern-asia-list,
+.southern-asia-list,
+.south-eastern-asia-list,
+.central-asia-list,
+.western-asia-list,
+.america-subregion-list,
+.caribbean-list,
+.south-america-list,
+.central-america-list,
+.northern-america-list,
+.oceania-subregion-list,
+.australia-list,
+.melanesia-list,
+.micronesia-list,
+.polynesia-list
+ {
   border-style: solid;
   border-color: lightslategray;
   border-width: 0.5px;
