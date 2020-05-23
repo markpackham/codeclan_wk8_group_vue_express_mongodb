@@ -4,16 +4,15 @@
     <p>Population: {{country.population}} - Area: {{country.area}} - Pop Density: {{ (country.population / country.area).toFixed(2) }}</p>
     <p>Capital: {{country.capital}}</p>
     <img class="flag" name="flag" :src="country.flag" />
-      </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "country-detail",
-  props: ["country"],
-}
+  props: ["country"]
+};
 </script>
 
 <style>
-
 </style>
