@@ -2,7 +2,7 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
-      <!-- <europe-subregion-list :countries='countries'></europe-subregion-list> -->
+      <europe-subregion-list :countries='countries'></europe-subregion-list>
       <eastern-europe-list :countries="countries"></eastern-europe-list>
       <southern-europe-list :countries="countries"></southern-europe-list>
       <western-europe-list :countries="countries"></western-europe-list>
@@ -22,21 +22,21 @@ import EasternEuropeList from "./components/EasternEuropeList";
 import SouthernEuropeList from "./components/SouthernEuropeList";
 import WesternEuropeList from "./components/WesternEuropeList";
 import NorthernEuropeList from "./components/NorthernEuropeList";
-// import EuropeSubRegionList from "./components/EuropeSubRegionList";
+import EuropeSubRegionList from "./components/EuropeSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 export default {
   name: "app",
   data() {
     return {
       countries: [],
-      selectedCountry: null
-      // selectedSubregion: null
+      selectedCountry: null,
+      selectedSubregion: null
     };
   },
   components: {
     "main-header": MainHeader,
     "main-footer": MainFooter,
-    // "europe-subregion-list": EuropeSubRegionList,
+    "europe-subregion-list": EuropeSubRegionList,
     "country-detail": CountryDetail,
     "eastern-europe-list": EasternEuropeList,
     "western-europe-list": WesternEuropeList,
@@ -75,9 +75,9 @@ export default {
       this.selectedCountry = country;
     });
 
-    // eventBus.$on('subregion-selected', subregion => {
-    //   this.selectedSubregion = subregion;
-    // })
+    eventBus.$on('subregion-selected', subregion => {
+      this.selectedSubregion = subregion;
+    })
   }
 };
 </script>

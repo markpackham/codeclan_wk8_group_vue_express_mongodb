@@ -15,10 +15,10 @@
       <li v-on:click="handleClick">
         Western Europe
       </li>
-      <eastern-europe-list :eastern-countries="countries"></eastern-europe-list>
-      <southern-europe-list :southern-countries="countries"></southern-europe-list>
-      <western-europe-list :western-countries="countries"></western-europe-list>
-      <northern-europe-list :northern-countries="countries"></northern-europe-list>
+      <!-- <eastern-europe-list :countries="countries"></eastern-europe-list>
+      <southern-europe-list :countries="countries"></southern-europe-list>
+      <western-europe-list :countries="countries"></western-europe-list>
+      <northern-europe-list :countries="countries"></northern-europe-list> -->
     </ul>
   </div>
 </template>
