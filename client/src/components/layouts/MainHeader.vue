@@ -1,6 +1,6 @@
 <template>
   <div class="main-header">
-    <h1>Country Information</h1>
+    <h1 id="header-title">Country Information</h1>
   </div>
 </template>
 
