@@ -15,11 +15,6 @@
 export default {
   name: "country-detail",
   props: ["country"],
-  data() {
-    return {
-      country: "Elgar"
-    }
-  },
   methods: {},
   computed: {},
   mounted() {}
