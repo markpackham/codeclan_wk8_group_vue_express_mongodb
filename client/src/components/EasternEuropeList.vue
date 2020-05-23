@@ -19,7 +19,12 @@ export default {
       eventBus.$emit('country-selected', this.country)
     }
   },
-      computed: {
+//   data(){
+//       return {
+//           "selectedCountry": {}
+//       }
+//   },
+  computed: {
         filterCountry(){
             return this.countries.filter(country => {
                 return country.subregion === "Eastern Europe";

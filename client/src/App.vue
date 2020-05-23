@@ -32,6 +32,16 @@ export default {
       selectedCountry: null 
     }
   },
+    components: {
+    "main-header": MainHeader,
+    "main-footer": MainFooter,
+    "eastern-europe-list": EasternEuropeList,
+    "western-europe-list": WesternEuropeList,
+    "northern-europe-list": NorthernEuropeList,
+    "southern-europe-list": SouthernEuropeList,
+    "europe-subregion-list": EuropeSubRegionList,
+    "country-detail": CountryDetail,
+  },
   methods: {
     handleError: function(error) {
       switch (error) {
@@ -56,22 +66,11 @@ export default {
     fetch('https://restcountries.eu/rest/v2/all')
     .then(res => res.json())
     .then(countries => this.countries = countries)
-    // .catch(this.handleError())
 
     eventBus.$on('country-selected', (country) => {
       this.selectedCountry = country
     })
   },
-  components: {
-    "main-header": MainHeader,
-    "main-footer": MainFooter,
-    "eastern-europe-list": EasternEuropeList,
-    "western-europe-list": WesternEuropeList,
-    "northern-europe-list": NorthernEuropeList,
-    "southern-europe-list": SouthernEuropeList,
-    "europe-subregion-list": EuropeSubRegionList,
-    "country-detail": CountryDetail,
-  }
 };
 </script>
 

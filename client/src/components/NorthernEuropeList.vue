@@ -13,7 +13,7 @@
 import { eventBus } from '../main.js'
 export default {
   name: "northern-europe-list",
-  props: ["countries"],
+  props: ["countries", "country"],
   methods: {
       handleClick(){
         eventBus.$emit('country-selected', this.country)
