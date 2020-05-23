@@ -1,0 +1,53 @@
+<template>
+  <div class="america-subregion-list">
+    <h2>American Subregions</h2>
+    <p>Please select a sub region to learn more about its countries.</p>
+    <br />
+    <ul>
+      <li v-on:click="handleSelectRegion('caribbean')">Caribbean</li>
+      <li v-on:click="handleSelectRegion('central')">Central America</li>
+      <li v-on:click="handleSelectRegion('south')">South America</li>
+      <li v-on:click="handleSelectRegion('northern')">Northern America</li>
+    </ul>
+    <br />
+    <div class="america-subregion-container">
+      <caribbean-list :countries="countries" :countryFrom="countryFrom"></caribbean-list>
+      <south-america-list :countries="countries" :countryFrom="countryFrom"></south-america-list>
+      <central-america-list :countries="countries" :countryFrom="countryFrom"></central-america-list>
+      <northern-america-list :countries="countries" :countryFrom="countryFrom"></northern-america-list>
+    </div>
+  </div>
+</template>
+
+<script>
+import CaribbeanList from "./CaribbeanList";
+import SouthAmericaList from "./SouthAmericaList";
+import CentralAmericaList from "./CentralAmericaList";
+import NorthernAmericaList from "./NorthernAmericaList";
+
+export default {
+  name: "america-subregion-list",
+  data() {
+    return {
+      countryFrom: ""
+    };
+  },
+  props: ["countries"],
+  components: {
+    "caribbean-list": CaribbeanList,
+    "south-america-list": SouthAmericaList,
+    "central-america-list": CentralAmericaList,
+    "northern-america-list": NorthernAmericaList
+  },
+  methods: {
+    handleSelectRegion(name) {
+      this.countryFrom = name;
+    }
+  },
+  computed: {},
+  mounted() {}
+};
+</script>
+
+<style>
+</style>
