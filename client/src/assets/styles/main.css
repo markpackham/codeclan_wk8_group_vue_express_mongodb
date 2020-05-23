@@ -26,6 +26,11 @@ ul {
   list-style: none;
 }
 
+li:hover {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -98,6 +103,18 @@ button:hover {
   cursor: pointer;
   opacity: 0.7;
   text-decoration: none;
+}
+
+.flag {
+  height: 100px;
+}
+
+.europe-subregion-list{
+  padding: 1rem;
+}
+
+.northern-europe-list, .eastern-europe-list, .western-europe-list, .southern-europe-list{
+
 }
 
 /* Small screens */

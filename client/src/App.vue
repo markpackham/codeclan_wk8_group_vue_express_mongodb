@@ -2,48 +2,94 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
-      <europe-subregion-list></europe-subregion-list>
-      <country-detail></country-detail>
+      <h2>European Subregions</h2>
+      <p>Please select a European sub region to learn more about its countries.</p>
+      <li v-on:click="handleSelectCountry('eastern')">Eastern Europe</li>
+      <li v-on:click="handleSelectCountry('northern')">Northern Europe</li>
+      <li v-on:click="handleSelectCountry('southern')">Southern Europe</li>
+      <li v-on:click="handleSelectCountry('western')">Western Europe</li> 
+
+      <europe-subregion-list :countries='countries'></europe-subregion-list>
+      <eastern-europe-list :countries="countries" :countryFrom="countryFrom"></eastern-europe-list>
+      <southern-europe-list :countries="countries" :countryFrom="countryFrom"></southern-europe-list>
+      <western-europe-list :countries="countries" :countryFrom="countryFrom"></western-europe-list>
+      <northern-europe-list :countries="countries" :countryFrom="countryFrom"></northern-europe-list>
+      <country-detail :country="selectedCountry"></country-detail>
     </div>
     <main-footer></main-footer>
   </div>
 </template>
 
 <script>
-import CountryService from "./services/CountryService";
+import { eventBus } from "@/main.js";
+import CountryService from "@/services/CountryService";
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
+import EasternEuropeList from "./components/EasternEuropeList";
+import SouthernEuropeList from "./components/SouthernEuropeList";
+import WesternEuropeList from "./components/WesternEuropeList";
+import NorthernEuropeList from "./components/NorthernEuropeList";
+import EuropeSubRegionList from "./components/EuropeSubRegionList";
 import CountryDetail from "./components/CountryDetail";
-import EuropeSubRegionList from "./components/EuropeSubRegionList.vue";
 export default {
   name: "app",
-  data() {},
+  data() {
+    return {
+      countries: [],
+      selectedCountry: null,
+      selectedSubregion: null,
+      countryFrom: ""
+    };
+  },
+  components: {
+    "main-header": MainHeader,
+    "main-footer": MainFooter,
+    "europe-subregion-list": EuropeSubRegionList,
+    "country-detail": CountryDetail,
+    "eastern-europe-list": EasternEuropeList,
+    "western-europe-list": WesternEuropeList,
+    "northern-europe-list": NorthernEuropeList,
+    "southern-europe-list": SouthernEuropeList,
+  },
   methods: {
+    getCountries: function() {
+      fetch("https://restcountries.eu/rest/v2/all")
+        .then(res => res.json())
+        .then(countries => (this.countries = countries));
+    },
     handleError: function(error) {
       switch (error) {
         case "401":
-          console.log("Page access unauthorized");
+          console.log("Page access unauthorized", error.status);
           break;
         case "403":
-          console.log("Page access forbidden");
+          console.log("Page access forbidden", error.status);
           break;
         case "404":
           console.log("Page not found", error.status);
           break;
         case "500":
-          console.log("Server down");
+          console.log("Server down", error.status);
           break;
         default:
           console.log(error.status);
       }
+    },
+
+    handleSelectCountry(name) {
+      this.countryFrom = name
     }
   },
-  mounted() {},
-  components: {
-    "main-header": MainHeader,
-    "main-footer": MainFooter,
-    "country-detail": CountryDetail,
-    "europe-subregion-list": EuropeSubRegionList
+  mounted() {
+    this.getCountries();
+
+    eventBus.$on("country-selected", country => {
+      this.selectedCountry = country;
+    });
+
+    eventBus.$on('subregion-selected', subregion => {
+      this.selectedSubregion = subregion;
+    })
   }
 };
 </script>
