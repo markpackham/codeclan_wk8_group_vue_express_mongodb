@@ -3,6 +3,7 @@
     <main-header></main-header>
     <div class="main-container">
       <europe-subregion-list :countries="countries"></europe-subregion-list>
+      <africa-subregion-list :countries="countries"></africa-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
     <main-footer></main-footer>
@@ -15,6 +16,7 @@ import CountryService from "@/services/CountryService";
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
 import EuropeSubRegionList from "./components/EuropeSubRegionList";
+import AfricaSubRegionList from "./components/AfricaSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 export default {
   name: "app",
@@ -28,6 +30,7 @@ export default {
     "main-header": MainHeader,
     "main-footer": MainFooter,
     "europe-subregion-list": EuropeSubRegionList,
+    "africa-subregion-list": AfricaSubRegionList,
     "country-detail": CountryDetail
   },
   methods: {
