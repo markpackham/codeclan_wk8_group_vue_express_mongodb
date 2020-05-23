@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import { eventBus } from "../main.js";
-import ListComponent from "./ListComponent.vue";
+import { eventBus } from "@/main.js";
+import ListComponent from "@/helpers/ListComponent.vue";
 export default {
   name: "eastern-europe-list",
   props: ["countries"],

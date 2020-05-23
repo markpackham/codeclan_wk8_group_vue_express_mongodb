@@ -2,10 +2,10 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
-        <eastern-europe-list :countries="countries"></eastern-europe-list>
-        <southern-europe-list :countries="countries"></southern-europe-list>
-        <western-europe-list :countries="countries"></western-europe-list>
-        <northern-europe-list :countries="countries"></northern-europe-list>
+      <eastern-europe-list :countries="countries"></eastern-europe-list>
+      <southern-europe-list :countries="countries"></southern-europe-list>
+      <western-europe-list :countries="countries"></western-europe-list>
+      <northern-europe-list :countries="countries"></northern-europe-list>
       <europe-subregion-list></europe-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
@@ -14,14 +14,14 @@
 </template>
 
 <script>
-import { eventBus } from './main.js'
-import CountryService from "./services/CountryService";
+import { eventBus } from "@/main.js";
+import CountryService from "@/services/CountryService";
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
-import EasternEuropeList from './components/EasternEuropeList';
-import SouthernEuropeList from './components/SouthernEuropeList';
-import WesternEuropeList from './components/WesternEuropeList';
-import NorthernEuropeList from './components/NorthernEuropeList';
+import EasternEuropeList from "./components/EasternEuropeList";
+import SouthernEuropeList from "./components/SouthernEuropeList";
+import WesternEuropeList from "./components/WesternEuropeList";
+import NorthernEuropeList from "./components/NorthernEuropeList";
 import EuropeSubRegionList from "./components/EuropeSubRegionList.vue";
 import CountryDetail from "./components/CountryDetail";
 export default {
@@ -29,10 +29,10 @@ export default {
   data() {
     return {
       countries: [],
-      selectedCountry: null 
-    }
+      selectedCountry: null
+    };
   },
-    components: {
+  components: {
     "main-header": MainHeader,
     "main-footer": MainFooter,
     "eastern-europe-list": EasternEuropeList,
@@ -40,9 +40,14 @@ export default {
     "northern-europe-list": NorthernEuropeList,
     "southern-europe-list": SouthernEuropeList,
     "europe-subregion-list": EuropeSubRegionList,
-    "country-detail": CountryDetail,
+    "country-detail": CountryDetail
   },
   methods: {
+    getCountries: function() {
+      fetch("https://restcountries.eu/rest/v2/all")
+        .then(res => res.json())
+        .then(countries => (this.countries = countries));
+    },
     handleError: function(error) {
       switch (error) {
         case "401":
@@ -62,15 +67,13 @@ export default {
       }
     }
   },
-  mounted() { 
-    fetch('https://restcountries.eu/rest/v2/all')
-    .then(res => res.json())
-    .then(countries => this.countries = countries)
+  mounted() {
+    this.getCountries();
 
-    eventBus.$on('country-selected', (country) => {
-      this.selectedCountry = country
-    })
-  },
+    eventBus.$on("country-selected", country => {
+      this.selectedCountry = country;
+    });
+  }
 };
 </script>
 

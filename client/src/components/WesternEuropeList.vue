@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { eventBus } from "../main.js";
+import { eventBus } from "@/main.js";
 export default {
   name: "western-europe-list",
   props: ["countries"],
