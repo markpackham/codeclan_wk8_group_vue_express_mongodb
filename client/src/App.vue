@@ -3,7 +3,7 @@
     <main-header></main-header>
     <div class="main-container">
       <div v-if="!countries.length">
-        <h1>Countries loading...</h1>
+        <h3>Loading...</h3>
       </div>
       <europe-subregion-list :countries="countries"></europe-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>

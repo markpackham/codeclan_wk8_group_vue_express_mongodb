@@ -3,7 +3,7 @@
     <h2>European Subregions</h2>
     <p>Please select a sub region to learn more about its countries.</p>
     <br />
-    <ul>
+    <ul class="europe-subregion-list-text">
       <li v-on:click="handleSelectRegion('eastern')">Eastern Europe</li>
       <li v-on:click="handleSelectRegion('northern')">Northern Europe</li>
       <li v-on:click="handleSelectRegion('southern')">Southern Europe</li>
