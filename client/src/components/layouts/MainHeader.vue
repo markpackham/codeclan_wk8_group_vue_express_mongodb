@@ -1,6 +1,6 @@
 <template>
   <div class="main-header">
-    <h1>Hello World</h1>
+    <h1>Country Information</h1>
   </div>
 </template>
 

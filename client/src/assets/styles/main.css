@@ -3,6 +3,7 @@
   --secondary-text-color: #52527a;
   --tertiary-text-color: #800080;
   --main-bg-color: #fff;
+  --header-bg-color: #fff;
   --btn-danger-text-color: #fff;
   --btn-danger-bg-color: #94180a;
   --btn-edit-bg-color: #1497b8;
@@ -32,11 +33,6 @@ a {
 a:hover {
 }
 
-.main-header,
-.main-footer {
-  text-align: center;
-}
-
 h1,
 h2,
 h3,
@@ -45,6 +41,16 @@ label,
 .main-footer,
 .main-container {
   padding: 1rem;
+}
+
+.main-header,
+.main-footer {
+  text-align: center;
+  background-color: var(---header-bg-color);
+}
+
+.main-footer {
+  font-style: italic;
 }
 
 .main-container {
