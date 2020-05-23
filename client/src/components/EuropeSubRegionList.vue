@@ -1,5 +1,5 @@
 <template>
-  <div class="eu-subregions">
+  <div class="europe-subregion-list">
     <h2>European Subregions</h2>
     <p>Please select a European sub region to learn more about its countries.</p>
     <br />
@@ -9,10 +9,13 @@
       <li v-on:click="handleSelectRegion('southern')">Southern Europe</li>
       <li v-on:click="handleSelectRegion('western')">Western Europe</li>
     </ul>
-    <eastern-europe-list :countries="countries" :countryFrom="countryFrom"></eastern-europe-list>
-    <southern-europe-list :countries="countries" :countryFrom="countryFrom"></southern-europe-list>
-    <western-europe-list :countries="countries" :countryFrom="countryFrom"></western-europe-list>
-    <northern-europe-list :countries="countries" :countryFrom="countryFrom"></northern-europe-list>
+    <br />
+    <div class="europe-subregion-container">
+      <eastern-europe-list :countries="countries" :countryFrom="countryFrom"></eastern-europe-list>
+      <southern-europe-list :countries="countries" :countryFrom="countryFrom"></southern-europe-list>
+      <western-europe-list :countries="countries" :countryFrom="countryFrom"></western-europe-list>
+      <northern-europe-list :countries="countries" :countryFrom="countryFrom"></northern-europe-list>
+    </div>
   </div>
 </template>
 
@@ -26,7 +29,7 @@ export default {
   name: "europe-subregion-list",
   data() {
     return {
-      countryFrom: "",
+      countryFrom: ""
     };
   },
   props: ["countries"],
@@ -41,8 +44,7 @@ export default {
       this.countryFrom = name;
     }
   },
-  computed: {
-  },
+  computed: {},
   mounted() {}
 };
 </script>
