@@ -45,9 +45,12 @@ h3,
 h4,
 label,
 .main-footer,
-.main-container,
-.country-detail {
+.main-container {
   padding: 1rem;
+}
+
+.country-detail {
+  padding: 1.4rem;
 }
 
 .main-header,
@@ -90,23 +93,6 @@ button:hover {
   background-color: var(--btn-edit-bg-color);
 }
 
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-}
-
-.modal-close {
-  color: var(--secondary-text-color);
-}
-
-.modal-close:hover {
-  cursor: pointer;
-  opacity: 0.7;
-  text-decoration: none;
-}
-
 .flag {
   border-style: solid;
   border-width: 0.5px;
@@ -125,6 +111,23 @@ button:hover {
   border-width: 0.5px;
   border-radius: 5px;
   padding: 1rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+}
+
+.modal-close {
+  color: var(--secondary-text-color);
+}
+
+.modal-close:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 /* Small screens */
