@@ -16,13 +16,7 @@ export default {
   components: {
     "list-component": ListComponent
   },
-  methods: {
-  },
-  data() {
-    return {
-      selectedCountry: {}
-    };
-  },
+  methods: {},
   computed: {
     filterCountry() {
       return this.countries.filter(country => {
