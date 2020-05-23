@@ -34,7 +34,10 @@ export default {
     getCountries: function() {
       fetch("https://restcountries.eu/rest/v2/all")
         .then(res => res.json())
-        .then(countries => (this.countries = countries));
+        .then(countries => (this.countries = countries))
+        .catch(error => {
+          handleError(error);
+        });
     },
     handleError: function(error) {
       switch (error) {
