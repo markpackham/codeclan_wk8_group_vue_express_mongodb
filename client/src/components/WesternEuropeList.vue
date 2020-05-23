@@ -1,5 +1,5 @@
 <template>
-  <div class="western-europe-list">
+  <div class="western-europe-list" v-if="countryFrom === 'western'">
     <h2>Western Europe</h2>
     <ul>
       <list-component v-for="(country, index) in filterCountry" :country="country" :key="index"></list-component>
@@ -12,7 +12,7 @@ import { eventBus } from "@/main.js";
 import ListComponent from "@/helpers/ListComponent.vue";
 export default {
   name: "western-europe-list",
-  props: ["countries", "country"],
+  props: ["countries", "country", 'countryFrom'],
   components: {
     "list-component": ListComponent
   },

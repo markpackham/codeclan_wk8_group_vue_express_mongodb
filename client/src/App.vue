@@ -2,11 +2,18 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
+      <h2>European Subregions</h2>
+      <p>Please select a European sub region to learn more about its countries.</p>
+      <li v-on:click="handleSelectCountry('eastern')">Eastern Europe</li>
+      <li v-on:click="handleSelectCountry('northern')">Northern Europe</li>
+      <li v-on:click="handleSelectCountry('southern')">Southern Europe</li>
+      <li v-on:click="handleSelectCountry('western')">Western Europe</li> 
+
       <europe-subregion-list :countries='countries'></europe-subregion-list>
-      <eastern-europe-list :countries="countries"></eastern-europe-list>
-      <southern-europe-list :countries="countries"></southern-europe-list>
-      <western-europe-list :countries="countries"></western-europe-list>
-      <northern-europe-list :countries="countries"></northern-europe-list>
+      <eastern-europe-list :countries="countries" :countryFrom="countryFrom"></eastern-europe-list>
+      <southern-europe-list :countries="countries" :countryFrom="countryFrom"></southern-europe-list>
+      <western-europe-list :countries="countries" :countryFrom="countryFrom"></western-europe-list>
+      <northern-europe-list :countries="countries" :countryFrom="countryFrom"></northern-europe-list>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
     <main-footer></main-footer>
@@ -30,7 +37,8 @@ export default {
     return {
       countries: [],
       selectedCountry: null,
-      selectedSubregion: null
+      selectedSubregion: null,
+      countryFrom: ""
     };
   },
   components: {
@@ -66,6 +74,10 @@ export default {
         default:
           console.log(error.status);
       }
+    },
+
+    handleSelectCountry(name) {
+      this.countryFrom = name
     }
   },
   mounted() {

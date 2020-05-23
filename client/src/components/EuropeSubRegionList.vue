@@ -1,9 +1,9 @@
 <template>
   <div class="europe-subregion-list">
-    <h2>European Subregions</h2>
+    <!-- <h2>European Subregions</h2>
     <p>Please select a European sub region to learn more about its countries.</p>
-    <ul>
-      <li v-on:click="handleClick">
+    <ul> -->
+      <!-- <li v-on:click="handleClick">
         Northern Europe
       </li>
       <li v-on:click="handleClick">
@@ -14,7 +14,7 @@
       </li>
       <li v-on:click="handleClick">
         Western Europe
-      </li>
+      </li> -->
       <!-- <eastern-europe-list :countries="countries"></eastern-europe-list>
       <southern-europe-list :countries="countries"></southern-europe-list>
       <western-europe-list :countries="countries"></western-europe-list>
