@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import AustraliaList from "./AustraliaList";
-import MelanesiaList from "./MelanesiaList";
-import MicronesiaList from "./MicronesiaList";
-import PolynesiaList from "./PolynesiaList";
+import AustraliaList from "./OceaniaComponents/AustraliaList";
+import MelanesiaList from "./OceaniaComponents/MelanesiaList";
+import MicronesiaList from "./OceaniaComponents/MicronesiaList";
+import PolynesiaList from "./OceaniaComponents/PolynesiaList";
 
 export default {
   name: "oceania-subregion-list",

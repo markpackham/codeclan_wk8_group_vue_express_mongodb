@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import EasternAfricaList from "./EasternAfricaList";
-import SouthernAfricaList from "./SouthernAfricaList";
-import MiddleAfricaList from "./MiddleAfricaList";
-import NorthernAfricaList from "./NorthernAfricaList";
-import WesternAfricaList from "./WesternAfricaList";
+import EasternAfricaList from "./AfricaComponents/EasternAfricaList";
+import SouthernAfricaList from "./AfricaComponents/SouthernAfricaList";
+import MiddleAfricaList from "./AfricaComponents/MiddleAfricaList";
+import NorthernAfricaList from "./AfricaComponents/NorthernAfricaList";
+import WesternAfricaList from "./AfricaComponents/WesternAfricaList";
 
 export default {
   name: "africa-subregion-list",

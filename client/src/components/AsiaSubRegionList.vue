@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import EasternAsiaList from "./EasternAsiaList";
-import SouthernAsiaList from "./SouthernAsiaList";
-import SouthEasternAsiaList from "./SouthEasternAsiaList";
-import CentralAsiaList from "./CentralAsiaList";
-import WesternAsiaList from "./WesternAsiaList";
+import EasternAsiaList from "./AsiaComponents/EasternAsiaList";
+import SouthernAsiaList from "./AsiaComponents/SouthernAsiaList";
+import SouthEasternAsiaList from "./AsiaComponents/SouthEasternAsiaList";
+import CentralAsiaList from "./AsiaComponents/CentralAsiaList";
+import WesternAsiaList from "./AsiaComponents/WesternAsiaList";
 
 export default {
   name: "asia-subregion-list",

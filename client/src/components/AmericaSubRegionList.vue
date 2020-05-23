@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import CaribbeanList from "./CaribbeanList";
-import SouthAmericaList from "./SouthAmericaList";
-import CentralAmericaList from "./CentralAmericaList";
-import NorthernAmericaList from "./NorthernAmericaList";
+import CaribbeanList from "./AmericaComponents/CaribbeanList";
+import SouthAmericaList from "./AmericaComponents/SouthAmericaList";
+import CentralAmericaList from "./AmericaComponents/CentralAmericaList";
+import NorthernAmericaList from "./AmericaComponents/NorthernAmericaList";
 
 export default {
   name: "america-subregion-list",
