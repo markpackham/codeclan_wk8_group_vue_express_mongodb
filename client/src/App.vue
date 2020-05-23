@@ -2,11 +2,11 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
+      <!-- <europe-subregion-list :countries='countries'></europe-subregion-list> -->
       <eastern-europe-list :countries="countries"></eastern-europe-list>
       <southern-europe-list :countries="countries"></southern-europe-list>
       <western-europe-list :countries="countries"></western-europe-list>
       <northern-europe-list :countries="countries"></northern-europe-list>
-      <europe-subregion-list></europe-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
     <main-footer></main-footer>
@@ -22,7 +22,7 @@ import EasternEuropeList from "./components/EasternEuropeList";
 import SouthernEuropeList from "./components/SouthernEuropeList";
 import WesternEuropeList from "./components/WesternEuropeList";
 import NorthernEuropeList from "./components/NorthernEuropeList";
-import EuropeSubRegionList from "./components/EuropeSubRegionList";
+// import EuropeSubRegionList from "./components/EuropeSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 export default {
   name: "app",
@@ -30,17 +30,18 @@ export default {
     return {
       countries: [],
       selectedCountry: null
+      // selectedSubregion: null
     };
   },
   components: {
     "main-header": MainHeader,
     "main-footer": MainFooter,
+    // "europe-subregion-list": EuropeSubRegionList,
+    "country-detail": CountryDetail,
     "eastern-europe-list": EasternEuropeList,
     "western-europe-list": WesternEuropeList,
     "northern-europe-list": NorthernEuropeList,
     "southern-europe-list": SouthernEuropeList,
-    "europe-subregion-list": EuropeSubRegionList,
-    "country-detail": CountryDetail
   },
   methods: {
     getCountries: function() {
@@ -73,6 +74,10 @@ export default {
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
     });
+
+    // eventBus.$on('subregion-selected', subregion => {
+    //   this.selectedSubregion = subregion;
+    // })
   }
 };
 </script>
