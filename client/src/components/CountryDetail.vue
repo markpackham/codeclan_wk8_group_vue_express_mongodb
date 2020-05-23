@@ -17,7 +17,7 @@ export default {
   props: ["country"],
   data() {
     return {
-      
+      country: "Elgar"
     }
   },
   methods: {},
