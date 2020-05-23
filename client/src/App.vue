@@ -2,23 +2,7 @@
   <div id="app">
     <main-header></main-header>
     <div class="main-container">
-      <div class="eu-subregions">
-        <h2>European Subregions</h2>
-        <p>Please select a European sub region to learn more about its countries.</p>
-        <br />
-        <ul>
-          <li v-on:click="handleSelectCountry('eastern')">Eastern Europe</li>
-          <li v-on:click="handleSelectCountry('northern')">Northern Europe</li>
-          <li v-on:click="handleSelectCountry('southern')">Southern Europe</li>
-          <li v-on:click="handleSelectCountry('western')">Western Europe</li>
-        </ul>
-      </div>
-
       <europe-subregion-list :countries="countries"></europe-subregion-list>
-      <eastern-europe-list :countries="countries" :countryFrom="countryFrom"></eastern-europe-list>
-      <southern-europe-list :countries="countries" :countryFrom="countryFrom"></southern-europe-list>
-      <western-europe-list :countries="countries" :countryFrom="countryFrom"></western-europe-list>
-      <northern-europe-list :countries="countries" :countryFrom="countryFrom"></northern-europe-list>
       <country-detail :country="selectedCountry"></country-detail>
     </div>
     <main-footer></main-footer>
@@ -30,10 +14,6 @@ import { eventBus } from "@/main.js";
 import CountryService from "@/services/CountryService";
 import MainHeader from "./components/layouts/MainHeader";
 import MainFooter from "./components/layouts/MainFooter";
-import EasternEuropeList from "./components/EasternEuropeList";
-import SouthernEuropeList from "./components/SouthernEuropeList";
-import WesternEuropeList from "./components/WesternEuropeList";
-import NorthernEuropeList from "./components/NorthernEuropeList";
 import EuropeSubRegionList from "./components/EuropeSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 export default {
@@ -41,20 +21,14 @@ export default {
   data() {
     return {
       countries: [],
-      selectedCountry: null,
-      selectedSubregion: null,
-      countryFrom: ""
+      selectedCountry: null
     };
   },
   components: {
     "main-header": MainHeader,
     "main-footer": MainFooter,
     "europe-subregion-list": EuropeSubRegionList,
-    "country-detail": CountryDetail,
-    "eastern-europe-list": EasternEuropeList,
-    "western-europe-list": WesternEuropeList,
-    "northern-europe-list": NorthernEuropeList,
-    "southern-europe-list": SouthernEuropeList
+    "country-detail": CountryDetail
   },
   methods: {
     getCountries: function() {
@@ -79,11 +53,6 @@ export default {
         default:
           console.log(error.status);
       }
-    },
-
-    handleSelectCountry(name) {
-      this.countryFrom = name;
-      this.selectedCountry = null;
     }
   },
   mounted() {
@@ -91,10 +60,6 @@ export default {
 
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
-    });
-
-    eventBus.$on("subregion-selected", subregion => {
-      this.selectedSubregion = subregion;
     });
   }
 };
