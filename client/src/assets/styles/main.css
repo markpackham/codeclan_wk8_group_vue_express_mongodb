@@ -29,7 +29,6 @@ ul {
 }
 
 li:hover {
-  font-size: 1.2rem;
   cursor: pointer;
   opacity: 0.7;
   font-weight: bold;
@@ -71,45 +70,88 @@ label,
 
 @keyframes fontGrow {
   0% {
-    font-size: 0rem;
+    font-size: 0px;
     font-weight: 100;
   }
   100% {
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 900;
   }
 }
 
 @-moz-keyframes fontGrow {
   0% {
-    font-size: 0rem;
+    font-size: 0px;
     font-weight: 100;
   }
   100% {
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 900;
   }
 }
 
 @-webkit-keyframes fontGrow {
   0% {
-    font-size: 0rem;
+    font-size: 0px;
     font-weight: 100;
   }
   100% {
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 900;
   }
 }
 
 @-o-keyframes fontGrow {
   0% {
-    font-size: 0rem;
+    font-size: 0px;
     font-weight: 100;
   }
   100% {
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 900;
+  }
+}
+
+.main-header h3 {
+  animation: colorChange ease 5s;
+  -webkit-animation: colorChange ease 5s;
+  -moz-animation: colorChange ease 5s;
+  -o-animation: colodChange ease 5s;
+}
+
+@keyframes colorChange {
+  0% {
+    color: lightblue;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@-moz-keyframes colorChange {
+  0% {
+    color: lightblue;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes colorChange {
+  0% {
+    color: lightblue;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@-o-keyframes colorChange {
+  0% {
+    color: lightblue;
+  }
+  100% {
+    color: black;
   }
 }
 
@@ -121,6 +163,7 @@ label,
 
 .main-header,
 .main-footer {
+  margin: 20px 0px;
   text-align: center;
   background-color: var(---header-bg-color);
 }

@@ -19,7 +19,7 @@
       <a
         target="_blank"
         :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
-      >More info</a>
+      >More info &#128366;</a>
     </p>
   </div>
 </template>
