@@ -1,8 +1,6 @@
 <template>
   <div class="africa-subregion-list">
     <h2>African Subregions</h2>
-    <p>Please select a sub region to learn more about its countries.</p>
-    <br />
     <ul>
       <li v-on:click="handleSelectRegion('eastern')">Eastern Africa</li>
       <li v-on:click="handleSelectRegion('northern')">Northern Africa</li>

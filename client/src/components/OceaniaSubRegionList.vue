@@ -1,8 +1,6 @@
 <template>
   <div class="oceania-subregion-list">
     <h2>Oceanian Subregions</h2>
-    <p>Please select a sub region to learn more about its countries.</p>
-    <br />
     <ul>
       <li v-on:click="handleSelectRegion('australia')">Australia and New Zealand</li>
       <li v-on:click="handleSelectRegion('melanesia')">Melanesia</li>

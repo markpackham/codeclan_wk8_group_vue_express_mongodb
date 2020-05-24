@@ -1,8 +1,6 @@
 <template>
   <div class="america-subregion-list">
     <h2>American Subregions</h2>
-    <p>Please select a sub region to learn more about its countries.</p>
-    <br />
     <ul>
       <li v-on:click="handleSelectRegion('caribbean')">Caribbean</li>
       <li v-on:click="handleSelectRegion('central')">Central America</li>
