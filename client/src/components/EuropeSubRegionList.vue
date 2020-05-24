@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { eventBus } from "@/main.js";
 import EasternEuropeList from "./EasternEuropeList";
 import SouthernEuropeList from "./SouthernEuropeList";
 import WesternEuropeList from "./WesternEuropeList";
@@ -29,7 +30,8 @@ export default {
   name: "europe-subregion-list",
   data() {
     return {
-      countryFrom: ""
+      countryFrom: "",
+      selectedCountry: null
     };
   },
   props: ["countries"],
@@ -42,6 +44,10 @@ export default {
   methods: {
     handleSelectRegion(name) {
       this.countryFrom = name;
+      this.nullSelected();
+    },
+    nullSelected () {
+       eventBus.$emit('null-selected', this.selectedCountry);
     }
   },
   computed: {},

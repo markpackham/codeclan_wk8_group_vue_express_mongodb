@@ -67,6 +67,10 @@ export default {
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
     });
+
+    eventBus.$on("null-selected", country => {
+      this.selectedCountry = null;
+    });
   }
 };
 </script>
