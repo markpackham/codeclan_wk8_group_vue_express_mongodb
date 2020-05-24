@@ -32,7 +32,10 @@ export default {
   data() {
     return {
       countries: [],
-      selectedCountry: null
+      selectedCountry: null,
+      selectedSubregion: null,
+      countryFrom: "",
+      facts: []
     };
   },
   components: {
@@ -71,11 +74,22 @@ export default {
         default:
           console.log(error.status);
       }
+    },
+
+    handleSelectCountry(name) {
+      this.countryFrom = name;
+      this.selectedCountry = null;
+    },
+
+    fetchFacts(){
+      CountryService.getFacts()
+      .then(facts => this.facts = facts)
     }
   },
   mounted() {
     this.getCountries();
-
+    this.fetchFacts();
+    
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
     });
