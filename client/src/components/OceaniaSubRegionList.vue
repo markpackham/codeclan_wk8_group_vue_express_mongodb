@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       countryFrom: "",
+      notRegion: "",
       selectedCountry: null
     };
   },
@@ -43,16 +44,23 @@ export default {
     handleSelectRegion(name) {
       this.countryFrom = name;
       this.nullSelected();
+      this.notTheRegion();
     },
     nullSelected() {
       eventBus.$emit("null-selected", this.selectedCountry);
+    },
+    notTheRegion() {
+      eventBus.$emit("not-region-europe", this.notRegion);
+      eventBus.$emit("not-region-asia", this.notRegion);
+      eventBus.$emit("not-region-africa", this.notRegion);
+      eventBus.$emit("not-region-america", this.notRegion);
     }
   },
   computed: {},
   mounted() {
-    eventBus.$on("not-region-oceania", notRegion =>{
+    eventBus.$on("not-region-oceania", notRegion => {
       this.countryFrom = "";
-    })
+    });
   }
 };
 </script>
