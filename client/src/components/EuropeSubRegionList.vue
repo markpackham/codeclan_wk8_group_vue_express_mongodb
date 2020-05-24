@@ -21,10 +21,10 @@
 
 <script>
 import { eventBus } from "@/main.js";
-import EasternEuropeList from "./EasternEuropeList";
-import SouthernEuropeList from "./SouthernEuropeList";
-import WesternEuropeList from "./WesternEuropeList";
-import NorthernEuropeList from "./NorthernEuropeList";
+import EasternEuropeList from "./EuropeComponents/EasternEuropeList";
+import SouthernEuropeList from "./EuropeComponents/SouthernEuropeList";
+import WesternEuropeList from "./EuropeComponents/WesternEuropeList";
+import NorthernEuropeList from "./EuropeComponents/NorthernEuropeList";
 
 export default {
   name: "europe-subregion-list",
@@ -46,8 +46,8 @@ export default {
       this.countryFrom = name;
       this.nullSelected();
     },
-    nullSelected () {
-       eventBus.$emit('null-selected', this.selectedCountry);
+    nullSelected() {
+      eventBus.$emit("null-selected", this.selectedCountry);
     }
   },
   computed: {},
