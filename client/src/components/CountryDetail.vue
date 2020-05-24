@@ -1,6 +1,6 @@
 <template>
   <div class="country-detail" v-if="country">
-    <h3>{{country.name}}</h3>
+    <h3>{{country.name}} &#x1F310;</h3>
     <img class="flag" name="flag" :src="country.flag" />
     <p>Alt Name: {{country.nativeName}}</p>
     <p>
@@ -18,7 +18,7 @@
         <div class="modal_background">
           <img class="flag" name="flag" :src="country.flag" />
           <h3>
-            {{country.name}}
+            {{country.name}} &#127760;
             <label for="model-click" class="btn-close">
               <span class="button-theme">
                 <strong>Close &#10006;</strong>
@@ -51,7 +51,7 @@
         <a
           target="_blank"
           :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
-        >More info &#x1F4DA;</a>
+        >CIA Factbook &#x1F4DA;</a>
       </p>
     </div>
   </div>
