@@ -1,0 +1,62 @@
+:root {
+  --main-text-color: #000;
+  --secondary-text-color: #52527a;
+  --tertiary-text-color: #800080;
+  --main-bg-color: rgb(146, 227, 238);
+  --seondary-bg-color: #c5edd0;
+  --tertiary-bg-color: rgb(223, 223, 232);
+}
+
+input[type="checkbox"]:checked {
+  pointer-events: auto;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.country_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%) scale(0.5);
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition-delay: 0.1s;
+}
+
+.country_modal ul li {
+  list-style: square;
+}
+
+.country_modal ul li:hover {
+  list-style: square;
+  cursor: none;
+  opacity: 1;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.country_modal .flag {
+  height: 200px;
+}
+
+input[type="checkbox"]:checked ~ .country_modal {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal_background {
+  border-style: solid;
+  border-color: lightslategray;
+  border-width: 0.5px;
+  border-radius: 5px;
+  display: block;
+  padding: 2rem;
+  background-color: var(--tertiary-bg-color);
+}
+
+.btn-close {
+  margin-left: 60%;
+  cursor: pointer;
+}
