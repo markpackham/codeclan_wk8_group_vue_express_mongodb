@@ -49,7 +49,11 @@ export default {
     }
   },
   computed: {},
-  mounted() {}
+  mounted() {
+    eventBus.$on("not-region-america", notRegion => {
+      this.countryFrom = "";
+    });
+  }
 };
 </script>
 

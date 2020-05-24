@@ -44,13 +44,16 @@ export default {
     handleSelectRegion(name) {
       this.countryFrom = name;
       this.nullSelected();
-      this.notTheRegionOceania();
+      this.notTheRegion();
     },
     nullSelected() {
       eventBus.$emit("null-selected", this.selectedCountry);
     },
-    notTheRegionOceania() {
+    notTheRegion() {
       eventBus.$emit("not-region-oceania", this.notRegion);
+      eventBus.$emit("not-region-asia", this.notRegion);
+      eventBus.$emit("not-region-africa", this.notRegion);
+      eventBus.$emit("not-region-america", this.notRegion);
     }
   },
   computed: {},
