@@ -34,6 +34,10 @@ li:hover {
   text-decoration: underline;
 }
 
+li:active{
+  color:var(--tertiary-text-color);
+}
+
 a {
   text-decoration: none;
 }
