@@ -43,7 +43,8 @@ export default {
       countries: [],
       selectedCountry: null,
       selectedSubregion: null,
-      countryFrom: ""
+      countryFrom: "",
+      facts: []
     };
   },
   components: {
@@ -84,11 +85,17 @@ export default {
     handleSelectCountry(name) {
       this.countryFrom = name;
       this.selectedCountry = null;
+    },
+
+    fetchFacts(){
+      CountryService.getFacts()
+      .then(facts => this.facts = facts)
     }
   },
   mounted() {
     this.getCountries();
-
+    this.fetchFacts();
+    
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
     });
