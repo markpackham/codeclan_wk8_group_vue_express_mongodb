@@ -1,6 +1,6 @@
 <template>
   <div class="africa-subregion-list">
-    <h2>African Subregions</h2>
+    <h2>African Subregions &#127757;</h2>
     <ul>
       <li v-on:click="handleSelectRegion('eastern')">Eastern Africa</li>
       <li v-on:click="handleSelectRegion('northern')">Northern Africa</li>

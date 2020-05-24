@@ -1,6 +1,6 @@
 <template>
   <div class="europe-subregion-list">
-    <h2>European Subregions</h2>
+    <h2>European Subregions &#127757;</h2>
     <ul class="europe-subregion-list-text">
       <li v-on:click="handleSelectRegion('eastern')">Eastern Europe</li>
       <li v-on:click="handleSelectRegion('northern')">Northern Europe</li>
