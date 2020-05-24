@@ -12,7 +12,7 @@
     <div class="modal-container">
       <input type="checkbox" id="model-click" style="display:none" />
       <label for="model-click">
-        <span class="button-theme">Full info &#128218;</span>
+        <span class="button-theme">Full info &#x1F4D6;</span>
       </label>
       <div class="country_modal">
         <div class="modal_background">
@@ -51,7 +51,7 @@
         <a
           target="_blank"
           :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
-        >More info &#128366;</a>
+        >More info &#x1F4DA;</a>
       </p>
     </div>
   </div>

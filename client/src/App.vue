@@ -81,15 +81,14 @@ export default {
       this.selectedCountry = null;
     },
 
-    fetchFacts(){
-      CountryService.getFacts()
-      .then(facts => this.facts = facts)
+    fetchFacts() {
+      CountryService.getFacts().then(facts => (this.facts = facts));
     }
   },
   mounted() {
     this.getCountries();
     this.fetchFacts();
-    
+
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
     });
