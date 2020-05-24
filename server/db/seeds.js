@@ -171,6 +171,69 @@ db.facts.insertMany([
     "fact": "Cyprus is the only country in the world without a national anthem."
   },
   {
+    "fact": "Over 126 million chopsticks are produced every year in China."
+  },
+  {
+    "fact": "India is where sugarcane was first refined, 2500 years ago!"
+  },
+  {
+    "fact": "40% of all footballs are produced in a small Pakistani city called Sialkot."
+  },
+  {
+    "fact": "Brazil's rainforests are home to over 100 uncontacted tribes."
+  },
+  {
+    "fact": "Bangladesh is such a warm country that a negative temperature has never been recorded there."
+  },
+  {
+    "fact": "Russian scientists recently managed to regenerate a plant from a seed found in Siberian permafrost."
+  },
+  {
+    "fact": "The oldest ever discovered human fossil was found in Ethiopia."
+  },
+  {
+    "fact": "Egypt is where bread originated 8000 years ago."
+  },
+  {
+    "fact": "Thailand is home to an annual festival where tonnes of fruit are gifted to monkeys."
+  },
+  {
+    "fact": "The city of Naples in Italy is where pizza was first created."
+  },
+  {
+    "fact": "Vilakazi Street in Soweto South Africa, was home to both Nelson Mandela and Desmond Tutu."
+  },
+  {
+    "fact": "Uganda is home to approximately 60% of Africa's bird population."
+  },
+  {
+    "fact": "Ukraine has an essentially 100% literacy rate amongst adults."
+  },
+  {
+    "fact": "Poland is where the bagel was first created."
+  },
+  {
+    "fact": "The US/Canadian border is the world's longest unprotected border at 5525 miles."
+  },
+  {
+    "fact": "Saudi Arabia is home to Mecca, the holy city of Islam."
+  },
+  {
+    "fact": "The mysterious Nazca Lines are located in Peru"
+  },
+  {
+    "fact":"Sarawak Chamber is the world's largest cave and is located in Malaysia."
+  },
+  {
+    "fact": "The Simpsons was made illegal in Venezuela!"
+  },
+  {
+    "fact": "The country of Cameroon has over 200 national languages."
+  },
+  {
+    "fact": "Ivory Coast is home to the world's largest church, Our Lady of Peace."
+  },
+  {
     "fact": "Scotland's national animal is... a unicorn!"
   }
 ]);
