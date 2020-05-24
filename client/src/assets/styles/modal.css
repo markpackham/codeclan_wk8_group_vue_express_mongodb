@@ -56,7 +56,24 @@ input[type="checkbox"]:checked ~ .country_modal {
   background-color: var(--tertiary-bg-color);
 }
 
-.btn-close {
-  margin-left: 60%;
+.country-detail label {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+label.btn-close {
+  margin-left: 30%;
   cursor: pointer;
+}
+
+.button-theme {
+  color: blue;
+}
+
+.button-theme:hover {
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  font-weight: bold;
+  text-decoration: underline;
 }

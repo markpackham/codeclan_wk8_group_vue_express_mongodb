@@ -12,7 +12,7 @@
     <div class="modal-container">
       <input type="checkbox" id="model-click" style="display:none" />
       <label for="model-click">
-        <a class="button-theme">Full info</a>
+        <span class="button-theme">Full info &#128218;</span>
       </label>
       <div class="country_modal">
         <div class="modal_background">
@@ -20,12 +20,13 @@
           <h3>
             {{country.name}}
             <label for="model-click" class="btn-close">
-              <a class="button-theme">
+              <span class="button-theme">
                 <strong>Close &#10006;</strong>
-              </a>
+              </span>
             </label>
           </h3>
           <ul>
+            <li>Alternative Name: {{country.nativeName}}</li>
             <li>Capital: {{country.capital}}</li>
             <li>Region: {{country.region}}</li>
             <li>Sub Region: {{country.subregion}}</li>
