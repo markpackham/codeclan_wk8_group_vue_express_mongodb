@@ -36,8 +36,8 @@ li:hover {
   text-decoration: underline;
 }
 
-li:active{
-  color:var(--tertiary-text-color);
+li:active {
+  color: var(--tertiary-text-color);
 }
 
 a {
@@ -45,6 +45,11 @@ a {
 }
 
 a:hover {
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 h1,
