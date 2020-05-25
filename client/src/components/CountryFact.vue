@@ -1,7 +1,7 @@
 <template>
   <div class="country-fact">
     <h3>Country Facts</h3>
-    <p>&nbsp;<a href="#" v-on:click="handleClick">Get a fact</a><br></p>
+    <p class="getFactLink"><a href="#" v-on:click="handleClick">Get a fact &#127891;</a><br></p>
     <p>{{aFact}}</p>
   </div>
 </template>

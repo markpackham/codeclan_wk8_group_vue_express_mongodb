@@ -1,3 +1,7 @@
+/*
+Main Style
+Imported by App.vue
+*/
 :root {
   --main-text-color: #000;
   --secondary-text-color: #52527a;
@@ -307,7 +311,7 @@ button:hover {
   }
 }
 
-.country-fact{
+.country-fact {
   border-style: solid;
   border-color: lightslategray;
   border-width: 0.5px;
@@ -323,40 +327,44 @@ button:hover {
   -o-animation: stretchOut ease 5s;
 }
 
-@keyframes stretchOut{
-  0%{
+@keyframes stretchOut {
+  0% {
     max-width: 0px;
   }
-  100%{
+  100% {
     max-width: 82%;
   }
 }
 
-@-moz-keyframes stretchOut{
-  0%{
+@-moz-keyframes stretchOut {
+  0% {
     max-width: 0px;
   }
-  100%{
+  100% {
     max-width: 82%;
   }
 }
 
-@-webkit-keyframes stretchOut{
-  0%{
+@-webkit-keyframes stretchOut {
+  0% {
     max-width: 0px;
   }
-  100%{
+  100% {
     max-width: 82%;
   }
 }
 
-@-o-keyframes stretchOut{
-  0%{
+@-o-keyframes stretchOut {
+  0% {
     max-width: 0px;
   }
-  100%{
+  100% {
     max-width: 82%;
   }
+}
+
+.getFactLink{
+  margin: 7px;
 }
 
 /* Small screens */
@@ -365,7 +373,8 @@ button:hover {
     display: flex;
     flex-direction: column;
   }
-  .content-section, .country-fact {
+  .content-section,
+  .country-fact {
     max-width: 87%;
   }
 }
