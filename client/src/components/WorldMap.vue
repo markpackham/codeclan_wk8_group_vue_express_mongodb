@@ -67,7 +67,7 @@ export default {
   },
   data() {
     return {
-      zoom: 13,
+      zoom: 5,
       center: latLng(25.720735, 278.085938, 5),
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
