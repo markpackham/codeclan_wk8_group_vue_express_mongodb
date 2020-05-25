@@ -3,11 +3,11 @@
       <ul>
       <question-detail v-for="(question, index) in questions" :key="index"></question-detail>
       </ul>
-      <p v-on:click="handleClick">Next question</p>
+      <button v-on:click="handleClick">Next question</button>
       <p>{{aQuestion}}</p>
-      <p>{{correctAnswer}}</p>
+      <ul><li><button>{{correctAnswer}}</button></li></ul>
       <ul v-for="(qstn, index) in incorrectAnswers" :key="index">
-              <li>{{qstn}}</li>
+              <li><button>{{qstn}}</button></li>
         </ul>
   </div>
 </template>
