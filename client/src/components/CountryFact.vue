@@ -2,8 +2,8 @@
   <div class="country-fact">
     <h3>Country Facts</h3>
     <p class="getFactLink">
-      <a href="#" v-on:click="handleClick">Get a fact &#127891;</a> &nbsp;
-      <a href="#" v-on:click="handleDelete">Delete the fact &#128128;</a>
+      <a href="#" v-on:click="handleClick">Get a fact &#127891;</a> &nbsp; &nbsp;
+      <a v-if="aFactId" href="#" v-on:click="handleDelete">Delete the fact &#128128;</a>
       <br />
     </p>
     <p>{{aFact}}</p>
@@ -36,6 +36,8 @@ export default {
     },
     handleDelete() {
       eventBus.$emit("delete-fact", this.aFactId);
+      this.aFact = "";
+      this.aFactId = "";
     }
   }
 };
