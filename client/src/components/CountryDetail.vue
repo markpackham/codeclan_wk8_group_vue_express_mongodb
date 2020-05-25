@@ -67,3 +67,6 @@ export default {
 <style>
 @import "../assets/styles/modal.css";
 </style>
+
+
+

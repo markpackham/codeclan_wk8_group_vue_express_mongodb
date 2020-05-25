@@ -327,6 +327,7 @@ button:hover {
   -o-animation: stretchOut ease 5s;
 }
 
+
 @keyframes stretchOut {
   0% {
     max-width: 0px;
