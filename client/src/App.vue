@@ -11,7 +11,7 @@
       <america-subregion-list :countries="countries"></america-subregion-list>
       <oceania-subregion-list :countries="countries"></oceania-subregion-list> -->
       <country-detail :country="selectedCountry"></country-detail>
-      <question-detail :question="selectedQuestion"></question-detail>
+      <!-- <question-detail :question="selectedQuestion"></question-detail> -->
       <question-holder :questions="questions"></question-holder>
     </div>
     <country-fact :facts="facts"></country-fact>
@@ -32,7 +32,7 @@ import OceaniaSubRegionList from "./components/OceaniaSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 import CountryFact from "./components/CountryFact";
 import QuestionHolder from "./components/QuestionHolder";
-import QuestionDetail from "./components/QuestionDetail";
+// import QuestionDetail from "./components/QuestionDetail";
 
 export default {
   name: "app",
@@ -41,7 +41,7 @@ export default {
       countries: [],
       selectedCountry: null,
       selectedSubregion: null,
-      selectedQuestion: null,
+      // selectedQuestion: null,
       countryFrom: "",
       facts: [],
       questions: []
@@ -58,7 +58,7 @@ export default {
     "country-detail": CountryDetail,
     "country-fact": CountryFact,
     "question-holder": QuestionHolder,
-    "question-detail": QuestionDetail
+    // "question-detail": QuestionDetail
   },
   methods: {
     getCountries: function() {
