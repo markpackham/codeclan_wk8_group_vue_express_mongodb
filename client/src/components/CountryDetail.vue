@@ -53,6 +53,7 @@
           :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
         >CIA Factbook &#x1F4DA;</a>
       </p>
+      <iframe width="420" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openlinkmap.org/small.php?lat=<LAT>&lon=<LON>&zoom=<ZOOM>" style="border: 1px solid black"></iframe>
     </div>
   </div>
 </template>
