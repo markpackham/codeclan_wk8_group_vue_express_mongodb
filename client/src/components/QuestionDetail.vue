@@ -1,6 +1,6 @@
 <template>
   <div>
-      <p>Question: {{question.question}}</p>
+      <!-- <p>Question:</p> -->
   </div>
 </template>
 
