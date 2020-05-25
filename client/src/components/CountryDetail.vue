@@ -1,6 +1,6 @@
 <template>
   <div class="country-detail" v-if="country">
-    <h3>{{country.name}}</h3>
+    <h3>{{country.name}} &#x1F310;</h3>
     <img class="flag" name="flag" :src="country.flag" />
     <p>Alt Name: {{country.nativeName}}</p>
     <p>
@@ -12,13 +12,13 @@
     <div class="modal-container">
       <input type="checkbox" id="model-click" style="display:none" />
       <label for="model-click">
-        <span class="button-theme">Full info &#128218;</span>
+        <span class="button-theme">Full info &#x1F4D6;</span>
       </label>
       <div class="country_modal">
         <div class="modal_background">
           <img class="flag" name="flag" :src="country.flag" />
           <h3>
-            {{country.name}}
+            {{country.name}} &#127760;
             <label for="model-click" class="btn-close">
               <span class="button-theme">
                 <strong>Close &#10006;</strong>
@@ -41,8 +41,8 @@
               <li>&#128172; {{ctry.name}}</li>
             </ul>
             <li>Currencies:</li>
-            <ul v-for="(ctry, index) in country.currencies" :key="index">
-              <li>&#128176; {{ctry.name}}</li>
+            <ul v-for="(cty, index) in country.currencies" :key="(index + country.length)">
+              <li>&#128176; {{cty.name}}</li>
             </ul>
           </ul>
         </div>
@@ -51,7 +51,7 @@
         <a
           target="_blank"
           :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
-        >More info &#128366;</a>
+        >CIA Factbook &#x1F4DA;</a>
       </p>
     </div>
   </div>
