@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       aFact: "",
+      aFactId: "",
       myFact: ""
     };
   },
@@ -28,7 +29,9 @@ export default {
   methods: {
     handleClick() {
       let randomNum = Math.floor(Math.random() * this.facts.length + 1);
-      this.aFact = this.facts[randomNum].fact;
+      let randomFact = this.facts[randomNum];
+      this.aFact = randomFact.fact;
+      this.aFactId = randomFact._id;
     }
   }
 };
