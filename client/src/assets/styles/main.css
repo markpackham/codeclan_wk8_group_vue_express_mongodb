@@ -311,70 +311,13 @@ button:hover {
   }
 }
 
-.country-fact {
-  border-style: solid;
-  border-color: lightslategray;
-  border-width: 0.5px;
-  border-radius: 5px;
-  box-shadow: 4px 4px #888888;
-  background-color: #b9f8cb;
-  max-width: 82%;
-  padding: 0.4rem;
-  margin: 0.8rem;
-  animation: stretchOut ease 5s;
-  -webkit-animation: stretchOut ease 5s;
-  -moz-animation: stretchOut ease 5s;
-  -o-animation: stretchOut ease 5s;
-}
-
-@keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-@-moz-keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-@-webkit-keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-@-o-keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-.getFactLink{
-  margin: 7px;
-}
-
 /* Small screens */
 @media (max-width: 600px) {
   .main-container {
     display: flex;
     flex-direction: column;
   }
-  .content-section,
-  .country-fact {
+  .content-section {
     max-width: 87%;
   }
 }
