@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <main-header></main-header>
+    <!-- <main-header></main-header> -->
     <div class="main-container">
       <div v-if="!countries.length">
         <h3>Loading...</h3>
       </div>
       <europe-subregion-list :countries="countries"></europe-subregion-list>
-      <africa-subregion-list :countries="countries"></africa-subregion-list>
+      <!-- <africa-subregion-list :countries="countries"></africa-subregion-list>
       <asia-subregion-list :countries="countries"></asia-subregion-list>
       <america-subregion-list :countries="countries"></america-subregion-list>
-      <oceania-subregion-list :countries="countries"></oceania-subregion-list>
+      <oceania-subregion-list :countries="countries"></oceania-subregion-list> -->
       <country-detail :country="selectedCountry"></country-detail>
+      <question-detail :question="selectedQuestion"></question-detail>
+      <question-holder :questions="questions"></question-holder>
     </div>
     <country-fact :facts="facts"></country-fact>
-    <main-footer></main-footer>
+    <!-- <main-footer></main-footer> -->
   </div>
 </template>
 
@@ -29,6 +31,9 @@ import AmericaSubRegionList from "./components/AmericaSubRegionList";
 import OceaniaSubRegionList from "./components/OceaniaSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 import CountryFact from "./components/CountryFact";
+import QuestionHolder from "./components/QuestionHolder";
+import QuestionDetail from "./components/QuestionDetail";
+
 export default {
   name: "app",
   data() {
@@ -36,6 +41,7 @@ export default {
       countries: [],
       selectedCountry: null,
       selectedSubregion: null,
+      selectedQuestion: null,
       countryFrom: "",
       facts: [],
       questions: []
@@ -50,7 +56,9 @@ export default {
     "america-subregion-list": AmericaSubRegionList,
     "oceania-subregion-list": OceaniaSubRegionList,
     "country-detail": CountryDetail,
-    "country-fact": CountryFact
+    "country-fact": CountryFact,
+    "question-holder": QuestionHolder,
+    "question-detail": QuestionDetail
   },
   methods: {
     getCountries: function() {
