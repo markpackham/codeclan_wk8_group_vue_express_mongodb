@@ -35,4 +35,5 @@ export default {
 </script>
 
 <style>
+@import "../assets/styles/country-fact.css";
 </style>
