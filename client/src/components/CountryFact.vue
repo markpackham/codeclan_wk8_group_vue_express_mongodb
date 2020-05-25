@@ -6,7 +6,7 @@
       <a v-if="aFactId" href="#" v-on:click="handleDelete">Delete the fact &#128128;</a>
       <br />
     </p>
-    <p>{{aFact}}</p>
+    <p id="fact-area">Country Fact: {{aFact}}</p>
     <country-fact-add></country-fact-add>
   </div>
 </template>
