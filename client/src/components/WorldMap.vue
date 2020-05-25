@@ -1,40 +1,4 @@
 <template>
-  <div class="country-fact">
-    <h3>Country Facts</h3>
-    <p class="getFactLink"><a href="#" v-on:click="handleClick">Get a fact &#127891;</a><br></p>
-    <p>{{aFact}}</p>
-  </div>
-</template>
-
-<script>
-export default {
-  name: "app",
-  data() {
-    return {
-      aFact: ""
-    };
-  },
-  props: ["facts", "Timmy"],
-  methods: {
-    handleClick() {
-      let randomNum = Math.floor(Math.random(this.facts.length) * 10);
-      this.aFact = this.facts[randomNum].fact;
-    }
-  }
-};
-</script>
-
-<style>
-</style>
-
-
-
-
-
-
-
-
-<template>
 
   <div style="height: 500px; width: 100%">
     <div style="height: 200px overflow: auto;">
@@ -104,14 +68,14 @@ export default {
   data() {
     return {
       zoom: 13,
-      center: latLng(55.946989, -3.202032, 8),
+      center: latLng(25.720735, 278.085938, 5),
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      withPopup: latLng(55.946989, -3.202032, 8),
-      withTooltip: latLng(55.946989, -3.202032, 8),
+      withPopup: latLng(25.720735, 278.085938, 5),
+      withTooltip: latLng(25.720735, 278.085938, 5),
       currentZoom: 11.5,
-      currentCenter: latLng(55.946989, -3.202032, 8),
+      currentCenter: latLng(25.720735, 278.085938, 5),
       showParagraph: false,
       mapOptions: {
         zoomSnap: 0.5
