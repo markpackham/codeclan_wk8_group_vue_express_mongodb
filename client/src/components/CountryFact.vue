@@ -14,10 +14,10 @@ export default {
       aFact: ""
     };
   },
-  props: ["facts", "Timmy"],
+  props: ["facts"],
   methods: {
     handleClick() {
-      let randomNum = Math.floor(Math.random(this.facts.length) * 10);
+      let randomNum = Math.floor((Math.random() * this.facts.length) + 1);
       this.aFact = this.facts[randomNum].fact;
     }
   }
