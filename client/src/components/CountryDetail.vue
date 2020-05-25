@@ -41,8 +41,8 @@
               <li>&#128172; {{ctry.name}}</li>
             </ul>
             <li>Currencies:</li>
-            <ul v-for="(ctry, index) in country.currencies" :key="index">
-              <li>&#128176; {{ctry.name}}</li>
+            <ul v-for="(cty, index) in country.currencies" :key="(index + country.length)">
+              <li>&#128176; {{cty.name}}</li>
             </ul>
           </ul>
         </div>
