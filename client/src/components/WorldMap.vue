@@ -4,9 +4,6 @@
     <div style="height: 200px overflow: auto;">
       <p>First marker is placed at {{ withPopup.lat }}, {{ withPopup.lng }}</p>
       <p>Center is at {{ currentCenter }} and the zoom is: {{ currentZoom }}</p>
-      <button @click="showLongText">
-        Toggle long popup
-      </button>
       <button @click="showMap = !showMap">
         Toggle map
       </button>
@@ -54,7 +51,7 @@
 
 <script>
 import { latLng } from "leaflet";
-import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
+import { LMap, LTileLayer, LMarker, LPopup } from "vue2-leaflet";
 
 export default {
   name: "Example",
@@ -63,7 +60,6 @@ export default {
     LTileLayer,
     LMarker,
     LPopup,
-    LTooltip
   },
   data() {
     return {
