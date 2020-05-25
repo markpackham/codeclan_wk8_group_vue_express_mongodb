@@ -99,6 +99,11 @@ export default {
     eventBus.$on("null-selected", country => {
       this.selectedCountry = null;
     });
+
+    eventBus.$on("submit-fact",(facts) =>{
+      CountryService.addFact(facts)
+      .then(factWithId => this.facts.push(factWithId))
+    } )
   }
 };
 </script>
