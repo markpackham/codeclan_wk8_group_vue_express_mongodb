@@ -11,8 +11,8 @@
       <america-subregion-list :countries="countries"></america-subregion-list>
       <oceania-subregion-list :countries="countries"></oceania-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
-      <country-fact :facts="facts"></country-fact>
     </div>
+    <country-fact :facts="facts"></country-fact>
     <main-footer></main-footer>
   </div>
 </template>
