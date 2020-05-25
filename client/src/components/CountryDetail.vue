@@ -9,6 +9,8 @@
     </p>
     <p>Pop Density: {{ (country.population / country.area).toFixed(2) }}</p>
     <p>Capital: {{country.capital}}</p>
+    <p>Latitude: {{country.latlng[0]}}</p>
+    <p>Longitude: {{country.latlng[1]}}</p>
     <div class="modal-container">
       <input type="checkbox" id="model-click" style="display:none" />
       <label for="model-click">
@@ -30,6 +32,8 @@
             <li>Capital: {{country.capital}}</li>
             <li>Region: {{country.region}}</li>
             <li>Sub Region: {{country.subregion}}</li>
+            <li>Latitude: {{country.latlng[0]}}</li>
+            <li>Longitude: {{country.latlng[1]}}</li>
             <li>Population: {{country.population}}</li>
             <li>Area: {{country.area}}</li>
             <li>Pop Density: {{ (country.population / country.area).toFixed(2) }}</li>
@@ -58,12 +62,18 @@
 </template>
 
 <script>
+import L from "leaflet";
+import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 export default {
   name: "country-detail",
-  props: ["country"]
+  props: ["country"],
+  components: {}
 };
 </script>
 
 <style>
 @import "../assets/styles/modal.css";
 </style>
+
+
+
