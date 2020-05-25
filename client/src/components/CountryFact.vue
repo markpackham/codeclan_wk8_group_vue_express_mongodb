@@ -6,33 +6,29 @@
       <br />
     </p>
     <p>{{aFact}}</p>
-    <form v-on:submit.prevent="onSubmit">
-      <label for="add-fact"></label>
-      <input id="add-fact" type="text" v-model="fact" required />
-      <button>Add Fact</button>
-    </form>
+    <country-fact-add></country-fact-add>
   </div>
 </template>
 
 <script>
 import { eventBus } from "@/main";
+import CountryFactAdd from "./CountryFactAdd";
 export default {
-  name: "app",
+  name: "country-fact",
   data() {
     return {
       aFact: "",
-      fact: ""
+      myFact: ""
     };
+  },
+  components: {
+    "country-fact-add": CountryFactAdd
   },
   props: ["facts"],
   methods: {
     handleClick() {
-      let randomNum = Math.floor((Math.random() * this.facts.length) + 1);
+      let randomNum = Math.floor(Math.random() * this.facts.length + 1);
       this.aFact = this.facts[randomNum].fact;
-    },
-    onSubmit() {
-      eventBus.$emit("submit-fact", this.fact);
-      this.fact = "";
     }
   }
 };

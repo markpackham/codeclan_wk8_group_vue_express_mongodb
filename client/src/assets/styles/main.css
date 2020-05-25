@@ -363,8 +363,16 @@ button:hover {
   }
 }
 
-.getFactLink{
+.getFactLink {
   margin: 7px;
+}
+
+.country-fact-form {
+}
+
+.country-fact-form input {
+  padding: 0.3rem;
+  width: 450px;
 }
 
 /* Small screens */
@@ -374,7 +382,8 @@ button:hover {
     flex-direction: column;
   }
   .content-section,
-  .country-fact {
+  .country-fact,
+  .country-fact-form input {
     max-width: 87%;
   }
 }
