@@ -37,7 +37,8 @@ export default {
       selectedCountry: null,
       selectedSubregion: null,
       countryFrom: "",
-      facts: []
+      facts: [],
+      questions: []
     };
   },
   components: {
@@ -56,6 +57,14 @@ export default {
       fetch("https://restcountries.eu/rest/v2/all")
         .then(res => res.json())
         .then(countries => (this.countries = countries))
+        .catch(error => {
+          handleError(error);
+        });
+    },
+    getQuestions: function() {
+      fetch("https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple")
+        .then(res => res.json())
+        .then(questions => {this.questions = questions.results})
         .catch(error => {
           handleError(error);
         });
@@ -91,6 +100,7 @@ export default {
   mounted() {
     this.getCountries();
     this.fetchFacts();
+    this.getQuestions();
 
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
