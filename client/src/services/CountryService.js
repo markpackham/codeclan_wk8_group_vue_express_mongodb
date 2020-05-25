@@ -17,4 +17,11 @@ export default {
       },
     }).then((res) => res.json());
   },
+
+  // DESTROY
+  deleteFact(id) {
+    return fetch(baseURL + id, {
+      method: "DELETE",
+    });
+  },
 };

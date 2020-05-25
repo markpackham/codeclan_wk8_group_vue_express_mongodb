@@ -2,7 +2,8 @@
   <div class="country-fact">
     <h3>Country Facts</h3>
     <p class="getFactLink">
-      <a href="#" v-on:click="handleClick">Get a fact &#127891;</a>
+      <a href="#" v-on:click="handleClick">Get a fact &#127891;</a> &nbsp; &nbsp;
+      <a v-if="aFactId" href="#" v-on:click="handleDelete">Delete the fact &#128128;</a>
       <br />
     </p>
     <p>{{aFact}}</p>
@@ -18,6 +19,7 @@ export default {
   data() {
     return {
       aFact: "",
+      aFactId: "",
       myFact: ""
     };
   },
@@ -28,7 +30,14 @@ export default {
   methods: {
     handleClick() {
       let randomNum = Math.floor(Math.random() * this.facts.length + 1);
-      this.aFact = this.facts[randomNum].fact;
+      let randomFact = this.facts[randomNum];
+      this.aFact = randomFact.fact;
+      this.aFactId = randomFact._id;
+    },
+    handleDelete() {
+      eventBus.$emit("delete-fact", this.aFactId);
+      this.aFact = "";
+      this.aFactId = "";
     }
   }
 };

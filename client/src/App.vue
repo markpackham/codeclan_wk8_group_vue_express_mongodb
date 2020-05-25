@@ -100,10 +100,17 @@ export default {
       this.selectedCountry = null;
     });
 
-    eventBus.$on("submit-fact",(facts) =>{
-      CountryService.addFact(facts)
-      .then(factWithId => this.facts.push(factWithId))
-    } )
+    eventBus.$on("submit-fact", facts => {
+      CountryService.addFact(facts).then(factWithId =>
+        this.facts.push(factWithId)
+      );
+    });
+
+    eventBus.$on("delete-fact", id => {
+      CountryService.deleteFact(id);
+      const index = this.facts.findIndex(fact => fact._id === id);
+      this.facts.splice(index, 1);
+    });
   }
 };
 </script>
