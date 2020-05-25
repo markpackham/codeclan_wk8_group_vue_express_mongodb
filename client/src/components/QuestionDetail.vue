@@ -1,6 +1,6 @@
 <template>
   <div>
-      <ul>
+      <!-- <ul>
           <p>Question:</p>
           <li>{{question.question}}</li>
           <p>Answer:</p>
@@ -10,7 +10,7 @@
               <li>{{qstn}}</li>
           </ul>
           <br>
-      </ul>
+      </ul> -->
   </div>
 </template>
 
