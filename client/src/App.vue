@@ -11,6 +11,7 @@
       <america-subregion-list :countries="countries"></america-subregion-list>
       <oceania-subregion-list :countries="countries"></oceania-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
+      <country-fact :facts="facts"></country-fact>
     </div>
     <main-footer></main-footer>
   </div>
@@ -27,6 +28,7 @@ import AsiaSubRegionList from "./components/AsiaSubRegionList";
 import AmericaSubRegionList from "./components/AmericaSubRegionList";
 import OceaniaSubRegionList from "./components/OceaniaSubRegionList";
 import CountryDetail from "./components/CountryDetail";
+import CountryFact from "./components/CountryFact";
 export default {
   name: "app",
   data() {
@@ -46,7 +48,8 @@ export default {
     "asia-subregion-list": AsiaSubRegionList,
     "america-subregion-list": AmericaSubRegionList,
     "oceania-subregion-list": OceaniaSubRegionList,
-    "country-detail": CountryDetail
+    "country-detail": CountryDetail,
+    "country-fact": CountryFact
   },
   methods: {
     getCountries: function() {
