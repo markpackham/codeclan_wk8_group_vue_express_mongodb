@@ -191,12 +191,14 @@ input {
 }
 
 button {
+  font-size: 0.7rem;
   padding: 0.3rem;
   margin: 0.5rem;
   border-radius: 5px;
 }
 
 button:hover {
+  font-size: 0.9rem;
 }
 
 .btn-danger {
@@ -303,6 +305,16 @@ button:hover {
   100% {
     opacity: 1;
   }
+}
+
+.country-fact{
+  border-style: solid;
+  border-color: lightslategray;
+  border-width: 0.5px;
+  border-radius: 5px;
+  box-shadow: 4px 4px #888888;
+  padding: 0.4rem;
+  margin: 0.8rem;
 }
 
 /* Small screens */
