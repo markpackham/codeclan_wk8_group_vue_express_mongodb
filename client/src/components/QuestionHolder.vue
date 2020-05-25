@@ -1,8 +1,5 @@
 <template>
   <div class="country-quiz">
-      <ul>
-      <question-detail v-for="(question, index) in questions" :key="index"></question-detail>
-      </ul>
       <button v-on:click="nextQuestion">Next question</button>
       <div v-if="aQuestion">
       <p>{{aQuestion}}</p>
