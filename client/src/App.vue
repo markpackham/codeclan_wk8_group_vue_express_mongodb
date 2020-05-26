@@ -6,15 +6,17 @@
         <h3>Loading...</h3>
       </div>
       <europe-subregion-list :countries="countries"></europe-subregion-list>
-      <africa-subregion-list :countries="countries"></africa-subregion-list>
+      <!-- <africa-subregion-list :countries="countries"></africa-subregion-list>
       <asia-subregion-list :countries="countries"></asia-subregion-list>
       <america-subregion-list :countries="countries"></america-subregion-list>
-      <oceania-subregion-list :countries="countries"></oceania-subregion-list>
+      <oceania-subregion-list :countries="countries"></oceania-subregion-list> -->
       <country-detail :country="selectedCountry"></country-detail>
       <question-holder :questions="questions" :answer="answer"></question-holder>
+      <!-- <question-holder class='highlight-correct' v-if='answer'></question-holder>
+      <question-holder class='highlight-incorrect' v-if='!answer'></question-holder> -->
     </div>
-    <country-fact :facts="facts"></country-fact>
-    <main-footer></main-footer>
+    <!-- <country-fact :facts="facts"></country-fact>
+    <main-footer></main-footer> -->
   </div>
 </template>
 
@@ -149,4 +151,15 @@ export default {
 
 <style>
 @import "./assets/styles/main.css";
+
+/* .highlight-correct{
+    background-color: #48FF1B;
+    color: black;
+    border: 3px solid #48FF1B;
+}
+.highlight-incorrect{
+    background-color: #FF2525;
+    color: black;
+    border: 3px solid #FF2525;
+} */
 </style>

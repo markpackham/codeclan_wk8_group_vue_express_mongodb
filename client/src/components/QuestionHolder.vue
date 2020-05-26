@@ -6,7 +6,8 @@
       <ul v-for="(answer, index) in allAnswers" :key="index">
               <li><button v-on:click="handleAnswer(answer)">{{answer}}</button></li>
         </ul>
-        <!-- <button v-on:click="showAnswer">Show answer</button> -->
+        <span class='highlight-correct' v-if='answer'>CORRECT!</span>
+        <span class='highlight-incorrect' v-if='!answer'>WRONG DUMBASS!</span>
       </div>
   </div>
 </template>
@@ -42,15 +43,26 @@ export default {
             this.allAnswers.splice(3, 1, this.questions[randomNum].incorrect_answers[2])
             this.allAnswers.sort()
         },
+        // handleAnswer(answer) {
+        //     this.answer = answer
+        //     eventBus.$emit('answer-selected', this.answer);
+        //     console.log(this.answer)
+        //     if(this.answer === this.correctAnswer){
+        //         console.log("Yey you got it right!")
+        //     }else{
+        //         console.log("WRONG!!!")
+        //     }
+        // },
         handleAnswer(answer) {
             this.answer = answer
-            eventBus.$emit('answer-selected', this.answer);
             console.log(this.answer)
             if(this.answer === this.correctAnswer){
-                console.log("Yey you got it right!")
+                this.answer = true
             }else{
-                console.log("WRONG!!!")
+                this.answer = false
             }
+            console.log(this.answer)
+            eventBus.$emit('answer-selected', this.answer);
         }
     },
     mounted(){
@@ -61,11 +73,13 @@ export default {
 
 <style>
 .highlight-correct{
-    color: #48FF1B;
+    background-color: #48FF1B;
+    color: black;
     border: 3px solid #48FF1B;
 }
 .highlight-incorrect{
-    color: #FF2525;
+    background-color: #FF2525;
+    color: black;
     border: 3px solid #FF2525;
 }
 </style>
