@@ -9,7 +9,7 @@ db.facts.insertMany([
     "fact": "The world's most densely populated island is Santa Cruz del Islote, off the coast of Colombia.  Despite being only the size of 2 football fields, over 500 people live there!"
   },
   {
-    "fact": "Scotland is home to the world's shortest street.  It resides in a terrible little town called Wick"
+    "fact": "Scotland is home to the world's shortest street.  It resides in a town called Wick"
   },
   {
     "fact": "The Canary Islands are not named after birds, rather... dogs!  The latin phrase 'Canariae Insulae' means 'Island of Dogs'"
