@@ -3,17 +3,17 @@
     <h2>African Subregions &#127757;</h2>
     <ul>
       <li v-on:click="handleSelectRegion('eastern')">Eastern Africa</li>
+      <li v-on:click="handleSelectRegion('middle')">Middle Africa</li>
       <li v-on:click="handleSelectRegion('northern')">Northern Africa</li>
       <li v-on:click="handleSelectRegion('southern')">Southern Africa</li>
-      <li v-on:click="handleSelectRegion('middle')">Middle Africa</li>
       <li v-on:click="handleSelectRegion('western')">Western Africa</li>
     </ul>
     <br />
     <div class="africa-subregion-container">
       <eastern-africa-list :countries="countries" :countryFrom="countryFrom"></eastern-africa-list>
-      <southern-africa-list :countries="countries" :countryFrom="countryFrom"></southern-africa-list>
       <middle-africa-list :countries="countries" :countryFrom="countryFrom"></middle-africa-list>
       <northern-africa-list :countries="countries" :countryFrom="countryFrom"></northern-africa-list>
+      <southern-africa-list :countries="countries" :countryFrom="countryFrom"></southern-africa-list>
       <western-africa-list :countries="countries" :countryFrom="countryFrom"></western-africa-list>
     </div>
   </div>

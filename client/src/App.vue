@@ -13,6 +13,7 @@
       <country-detail :country="selectedCountry"></country-detail>
     </div>
     <country-fact :facts="facts"></country-fact>
+    <question-holder :questions="questions" :answer="answer"></question-holder>
     <main-footer></main-footer>
   </div>
 </template>
@@ -29,6 +30,8 @@ import AmericaSubRegionList from "./components/AmericaSubRegionList";
 import OceaniaSubRegionList from "./components/OceaniaSubRegionList";
 import CountryDetail from "./components/CountryDetail";
 import CountryFact from "./components/CountryFact";
+import QuestionHolder from "./components/QuestionHolder";
+
 export default {
   name: "app",
   data() {
@@ -37,7 +40,10 @@ export default {
       selectedCountry: null,
       selectedSubregion: null,
       countryFrom: "",
-      facts: []
+      facts: [],
+      questions: [],
+      token: null,
+      answer: ""
     };
   },
   components: {
@@ -49,13 +55,26 @@ export default {
     "america-subregion-list": AmericaSubRegionList,
     "oceania-subregion-list": OceaniaSubRegionList,
     "country-detail": CountryDetail,
-    "country-fact": CountryFact
+    "country-fact": CountryFact,
+    "question-holder": QuestionHolder
   },
   methods: {
     getCountries: function() {
       fetch("https://restcountries.eu/rest/v2/all")
         .then(res => res.json())
         .then(countries => (this.countries = countries))
+        .catch(error => {
+          handleError(error);
+        });
+    },
+    getQuestions: function() {
+      fetch(
+        "https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple&encode=url3986"
+      )
+        .then(res => res.json())
+        .then(questions => {
+          this.questions = questions.results;
+        })
         .catch(error => {
           handleError(error);
         });
@@ -89,8 +108,10 @@ export default {
     }
   },
   mounted() {
+    // INDEX
     this.getCountries();
     this.fetchFacts();
+    this.getQuestions();
 
     eventBus.$on("country-selected", country => {
       this.selectedCountry = country;
@@ -100,16 +121,27 @@ export default {
       this.selectedCountry = null;
     });
 
+    // CREATE
     eventBus.$on("submit-fact", facts => {
       CountryService.addFact(facts).then(factWithId =>
         this.facts.push(factWithId)
       );
     });
 
+    // DELETE ONE
     eventBus.$on("delete-fact", id => {
       CountryService.deleteFact(id);
       const index = this.facts.findIndex(fact => fact._id === id);
       this.facts.splice(index, 1);
+    });
+
+    eventBus.$on('answer-selected', response => {
+      this.answer = response
+    });
+
+    // DELETE ALL
+    eventBus.$on("delete-all", payload => {
+      (this.facts = []), CountryService.deleteAll();
     });
   }
 };

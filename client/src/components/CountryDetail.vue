@@ -1,11 +1,11 @@
 <template>
   <div class="country-detail" v-if="country">
-    <h3>{{country.name}} &#x1F310;</h3>
+    <h3>{{ country.name }} &#x1F310;</h3>
     <img class="flag" name="flag" :src="country.flag" />
-    <p>Alt Name: {{country.nativeName}}</p>
+    <p>Alt Name: {{ country.nativeName }}</p>
     <p>
       Sub Region:
-      <strong>{{country.subregion}}</strong>
+      <strong>{{ country.subregion }}</strong>
     </p>
     <p>Pop Density: {{ (country.population / country.area).toFixed(2) }}</p>
     <p>Capital: {{country.capital}}</p>
@@ -20,7 +20,7 @@
         <div class="modal_background">
           <img class="flag" name="flag" :src="country.flag" />
           <h3>
-            {{country.name}} &#127760;
+            {{ country.name }} &#127760;
             <label for="model-click" class="btn-close">
               <span class="button-theme">
                 <strong>Close &#10006;</strong>
@@ -42,28 +42,58 @@
             <li>Native Name: {{country.nativeName}}</li>
             <li>Languages:</li>
             <ul v-for="(ctry, index) in country.languages" :key="index">
-              <li>&#128172; {{ctry.name}}</li>
+              <li>&#128172; {{ ctry.name }}</li>
             </ul>
             <li>Currencies:</li>
-            <ul v-for="(cty, index) in country.currencies" :key="(index + country.length)">
-              <li>&#128176; {{cty.name}}</li>
+            <ul
+              v-for="(cty, index) in country.currencies"
+              :key="index + country.length"
+            >
+              <li>&#128176; {{ cty.name }}</li>
             </ul>
           </ul>
+          <br>
+          <iframe
+          class="country-frame"
+        width=""
+        height=""
+        frameborder="0"
+        scrolling="yes"
+        marginheight="0"
+        marginwidth="0"
+        :src="
+          `http://www.openlinkmap.org/small.php?lat=${country.latlng[0]}&lon=${country.latlng[1]}&zoom=4`
+        "
+        style="border: 1px solid black"
+      ></iframe>
         </div>
       </div>
       <p>
         <a
           target="_blank"
-          :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
-        >CIA Factbook &#x1F4DA;</a>
+          :href="
+            `https://www.cia.gov/library/publications/the-world-factbook/docs/one_page_summaries.html`
+          "
+          >CIA Factbook &#x1F4DA;</a
+        >
       </p>
+      <iframe
+        width="420"
+        height="350"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        :src="
+          `http://www.openlinkmap.org/small.php?lat=${country.latlng[0]}&lon=${country.latlng[1]}&zoom=5`
+        "
+        style="border: 1px solid black"
+      ></iframe>
     </div>
   </div>
 </template>
 
 <script>
-import L from "leaflet";
-import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 export default {
   name: "country-detail",
   props: ["country"],

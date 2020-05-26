@@ -9,7 +9,7 @@ Imported by components/CountryFact.vue
   box-shadow: 4px 4px #888888;
   background-color: #b9f8cb;
   max-width: 82%;
-  padding: 0.4rem;
+  padding: 0.3rem;
   margin: 0.8rem;
   animation: stretchOut ease 5s;
   -webkit-animation: stretchOut ease 5s;
@@ -22,7 +22,7 @@ Imported by components/CountryFact.vue
     max-width: 0px;
   }
   100% {
-    max-width: 82%;
+    max-width: 79%;
   }
 }
 
@@ -31,7 +31,7 @@ Imported by components/CountryFact.vue
     max-width: 0px;
   }
   100% {
-    max-width: 82%;
+    max-width: 79%;
   }
 }
 
@@ -40,7 +40,7 @@ Imported by components/CountryFact.vue
     max-width: 0px;
   }
   100% {
-    max-width: 82%;
+    max-width: 79%;
   }
 }
 
@@ -49,7 +49,7 @@ Imported by components/CountryFact.vue
     max-width: 0px;
   }
   100% {
-    max-width: 82%;
+    max-width: 79%;
   }
 }
 
@@ -57,12 +57,19 @@ Imported by components/CountryFact.vue
   margin: 7px;
 }
 
-.country-fact-form {
+.getFactLink a{
+  padding: 0.3rem;
+  border-radius: 5px;
 }
 
 .country-fact-form input {
+  margin-top: 0.6rem;
   padding: 0.3rem;
   width: 450px;
+}
+
+#fact-area{
+  margin-left: 0.5rem;
 }
 
 /* Small screens */

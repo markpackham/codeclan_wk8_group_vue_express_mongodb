@@ -12,7 +12,6 @@ Imported by App.vue
   --header-bg-color: #fff;
   --btn-danger-text-color: #fff;
   --btn-danger-bg-color: #94180a;
-  --btn-edit-bg-color: #1497b8;
 }
 
 * {
@@ -70,6 +69,7 @@ label,
   -webkit-animation: fontGrow ease 5s;
   -moz-animation: fontGrow ease 5s;
   -o-animation: fontGrow ease 5s;
+  text-shadow: 2px 2px #878583;
 }
 
 @keyframes fontGrow {
@@ -195,24 +195,21 @@ input {
 }
 
 button {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding: 0.3rem;
   margin: 0.5rem;
   border-radius: 5px;
 }
 
 button:hover {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .btn-danger {
   color: var(--btn-danger-text-color);
   background-color: var(--btn-danger-bg-color);
-}
-
-.btn-edit {
-  color: var(--btn-danger-text-color);
-  background-color: var(--btn-edit-bg-color);
 }
 
 .flag {
