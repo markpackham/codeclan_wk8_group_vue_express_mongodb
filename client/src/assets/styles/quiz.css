@@ -1,0 +1,10 @@
+.highlight-correct{
+    background-color: #48FF1B;
+    color: black;
+    border: 3px solid #48FF1B;
+}
+.highlight-incorrect{
+    background-color: #FF2525;
+    color: black;
+    border: 3px solid #FF2525;
+}

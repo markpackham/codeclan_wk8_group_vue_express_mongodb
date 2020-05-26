@@ -7,7 +7,7 @@
               <li><button v-on:click="handleAnswer(answer)">{{decodeURIComponent(answer)}}</button></li>
         </ul>
         <span class='highlight-correct' v-if='answer'>CORRECT!</span>
-        <span class='highlight-incorrect' v-if='!answer'>WRONG DUMBASS!</span>
+        <span class='highlight-incorrect' v-if='!answer'>WRONG, try again!</span>
       </div>
   </div>
 </template>
@@ -27,10 +27,6 @@ export default {
         }
     },
     computed: {
-        // answerStyle: function() {
-        //     if (this.answer == this.correctAnswer) {return "highlight-correct"}
-        //     else {return "highlight-incorrect"}
-        // }
     },
     methods: {
         nextQuestion() {
@@ -72,14 +68,5 @@ export default {
 </script>
 
 <style>
-.highlight-correct{
-    background-color: #48FF1B;
-    color: black;
-    border: 3px solid #48FF1B;
-}
-.highlight-incorrect{
-    background-color: #FF2525;
-    color: black;
-    border: 3px solid #FF2525;
-}
+@import "../assets/styles/quiz.css";
 </style>
