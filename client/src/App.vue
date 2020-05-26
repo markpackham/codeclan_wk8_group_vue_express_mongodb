@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <main-header></main-header>
+    <!-- <main-header></main-header> -->
     <div class="main-container">
       <div v-if="!countries.length">
         <h3>Loading...</h3>
       </div>
       <europe-subregion-list :countries="countries"></europe-subregion-list>
-      <africa-subregion-list :countries="countries"></africa-subregion-list>
+      <!-- <africa-subregion-list :countries="countries"></africa-subregion-list>
       <asia-subregion-list :countries="countries"></asia-subregion-list>
       <america-subregion-list :countries="countries"></america-subregion-list>
-      <oceania-subregion-list :countries="countries"></oceania-subregion-list>
+      <oceania-subregion-list :countries="countries"></oceania-subregion-list> -->
       <country-detail :country="selectedCountry"></country-detail>
-      <question-holder :questions="questions"></question-holder>
+      <question-holder :questions="questions" :answer="answer"></question-holder>
     </div>
     <country-fact :facts="facts"></country-fact>
-    <main-footer></main-footer>
+    <!-- <main-footer></main-footer> -->
   </div>
 </template>
 
@@ -41,7 +41,9 @@ export default {
       selectedSubregion: null,
       countryFrom: "",
       facts: [],
-      questions: []
+      questions: [],
+      token: null,
+      answer: ""
     };
   },
   components: {
@@ -125,6 +127,11 @@ export default {
       const index = this.facts.findIndex(fact => fact._id === id);
       this.facts.splice(index, 1);
     });
+
+    eventBus.$on('answer-selected', response => {
+      this.answer = response
+    })
+
   }
 };
 </script>

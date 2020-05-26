@@ -3,10 +3,10 @@
       <button v-on:click="nextQuestion">Next question</button>
       <div v-if="aQuestion">
       <p>{{aQuestion}}</p>
-      <ul v-for="(qstn, index) in allAnswers" :key="index">
-              <li><button>{{qstn}}</button></li>
-              <!-- v-if="this.answer" :class="this.answerStyle" -->
+      <ul v-for="(anything, index) in allAnswers" :key="index">
+              <li><button v-on:click="handleAnswer">{{anything}}</button></li>
         </ul>
+        <!-- <button v-on:click="showAnswer">Show answer</button> -->
       </div>
   </div>
 </template>
@@ -22,14 +22,14 @@ export default {
             aQuestion: "",
             correctAnswer: '',
             allAnswers: [],
-            // answer: ''
+            answer: "Billy Bob"
         }
     },
     computed: {
-        answerStyle: function() {
-            if (this.answer == this.correctAnswer) {return "highlight-correct"}
-            else {return "highlight-incorrect"}
-        }
+        // answerStyle: function() {
+        //     if (this.answer == this.correctAnswer) {return "highlight-correct"}
+        //     else {return "highlight-incorrect"}
+        // }
     },
     methods: {
         nextQuestion() {
@@ -41,6 +41,12 @@ export default {
             this.allAnswers.splice(2, 1, this.questions[randomNum].incorrect_answers[1])
             this.allAnswers.splice(3, 1, this.questions[randomNum].incorrect_answers[2])
             this.allAnswers.sort()
+            this.answer = "Hello world"
+        },
+        handleAnswer() {
+            this.answer = ""
+            eventBus.$emit('answer-selected', this.answer);
+            console.log(this.answer)
         }
     }
 }
