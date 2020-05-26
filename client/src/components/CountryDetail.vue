@@ -8,7 +8,9 @@
       <strong>{{ country.subregion }}</strong>
     </p>
     <p>Pop Density: {{ (country.population / country.area).toFixed(2) }}</p>
-    <p>Capital: {{ country.capital }}</p>
+    <p>Capital: {{country.capital}}</p>
+    <p>Latitude: {{country.latlng[0]}}</p>
+    <p>Longitude: {{country.latlng[1]}}</p>
     <div class="modal-container">
       <input type="checkbox" id="model-click" style="display:none" />
       <label for="model-click">
@@ -26,18 +28,18 @@
             </label>
           </h3>
           <ul>
-            <li>Alternative Name: {{ country.nativeName }}</li>
-            <li>Capital: {{ country.capital }}</li>
-            <li>Region: {{ country.region }}</li>
-            <li>Sub Region: {{ country.subregion }}</li>
-            <li>Population: {{ country.population }}</li>
-            <li>Area: {{ country.area }}</li>
-            <li>
-              Pop Density: {{ (country.population / country.area).toFixed(2) }}
-            </li>
-            <li>Demonym: {{ country.demonym }}</li>
-            <li>Gini Coefficient: {{ country.gini }}</li>
-            <li>Native Name: {{ country.nativeName }}</li>
+            <li>Alternative Name: {{country.nativeName}}</li>
+            <li>Capital: {{country.capital}}</li>
+            <li>Region: {{country.region}}</li>
+            <li>Sub Region: {{country.subregion}}</li>
+            <li>Latitude: {{country.latlng[0]}}</li>
+            <li>Longitude: {{country.latlng[1]}}</li>
+            <li>Population: {{country.population}}</li>
+            <li>Area: {{country.area}}</li>
+            <li>Pop Density: {{ (country.population / country.area).toFixed(2) }}</li>
+            <li>Demonym: {{country.demonym}}</li>
+            <li>Gini Coefficient: {{country.gini}}</li>
+            <li>Native Name: {{country.nativeName}}</li>
             <li>Languages:</li>
             <ul v-for="(ctry, index) in country.languages" :key="index">
               <li>&#128172; {{ ctry.name }}</li>
@@ -56,7 +58,7 @@
         <a
           target="_blank"
           :href="
-            `https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`
+            `https://www.cia.gov/library/publications/the-world-factbook/docs/one_page_summaries.html`
           "
           >CIA Factbook &#x1F4DA;</a
         >
@@ -78,12 +80,18 @@
 </template>
 
 <script>
+import L from "leaflet";
+import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 export default {
   name: "country-detail",
   props: ["country"],
+  components: {}
 };
 </script>
 
 <style>
 @import "../assets/styles/modal.css";
 </style>
+
+
+

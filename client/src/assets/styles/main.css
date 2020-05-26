@@ -12,7 +12,6 @@ Imported by App.vue
   --header-bg-color: #fff;
   --btn-danger-text-color: #fff;
   --btn-danger-bg-color: #94180a;
-  --btn-edit-bg-color: #1497b8;
 }
 
 * {
@@ -70,6 +69,7 @@ label,
   -webkit-animation: fontGrow ease 5s;
   -moz-animation: fontGrow ease 5s;
   -o-animation: fontGrow ease 5s;
+  text-shadow: 2px 2px #878583;
 }
 
 @keyframes fontGrow {
@@ -195,24 +195,21 @@ input {
 }
 
 button {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding: 0.3rem;
   margin: 0.5rem;
   border-radius: 5px;
 }
 
 button:hover {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .btn-danger {
   color: var(--btn-danger-text-color);
   background-color: var(--btn-danger-bg-color);
-}
-
-.btn-edit {
-  color: var(--btn-danger-text-color);
-  background-color: var(--btn-edit-bg-color);
 }
 
 .flag {
@@ -311,71 +308,13 @@ button:hover {
   }
 }
 
-.country-fact {
-  border-style: solid;
-  border-color: lightslategray;
-  border-width: 0.5px;
-  border-radius: 5px;
-  box-shadow: 4px 4px #888888;
-  background-color: #b9f8cb;
-  max-width: 82%;
-  padding: 0.4rem;
-  margin: 0.8rem;
-  animation: stretchOut ease 5s;
-  -webkit-animation: stretchOut ease 5s;
-  -moz-animation: stretchOut ease 5s;
-  -o-animation: stretchOut ease 5s;
-}
-
-
-@keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-@-moz-keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-@-webkit-keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-@-o-keyframes stretchOut {
-  0% {
-    max-width: 0px;
-  }
-  100% {
-    max-width: 82%;
-  }
-}
-
-.getFactLink{
-  margin: 7px;
-}
-
 /* Small screens */
 @media (max-width: 600px) {
   .main-container {
     display: flex;
     flex-direction: column;
   }
-  .content-section,
-  .country-fact {
+  .content-section {
     max-width: 87%;
   }
 }
