@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main-footer">Copyright {{getTheYear()}}</div>
+    <div class="main-footer">&#169; {{getTheYear()}}</div>
     <hr />
   </div>
 </template>
