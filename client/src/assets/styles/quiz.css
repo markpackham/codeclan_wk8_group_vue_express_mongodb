@@ -1,7 +1,7 @@
-.highlight-correct{
-    background-color: #48FF1B;
+.highlight-response{
     color: black;
-    border: 3px solid #48FF1B;
+    font-size: large;
+    font-weight: bold;
 }
 .highlight-incorrect{
     background-color: #FF2525;

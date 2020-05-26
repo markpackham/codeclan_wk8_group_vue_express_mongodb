@@ -6,15 +6,15 @@
         <h3>Loading...</h3>
       </div>
       <europe-subregion-list :countries="countries"></europe-subregion-list>
-      <!-- <africa-subregion-list :countries="countries"></africa-subregion-list> -->
-      <!-- <asia-subregion-list :countries="countries"></asia-subregion-list> -->
-      <!-- <america-subregion-list :countries="countries"></america-subregion-list> -->
-      <!-- <oceania-subregion-list :countries="countries"></oceania-subregion-list> -->
+      <africa-subregion-list :countries="countries"></africa-subregion-list>
+      <asia-subregion-list :countries="countries"></asia-subregion-list>
+      <america-subregion-list :countries="countries"></america-subregion-list>
+      <oceania-subregion-list :countries="countries"></oceania-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
-      <question-holder :questions="questions" :answer="answer"></question-holder>
     </div>
-    <!-- <country-fact :facts="facts"></country-fact>
-    <main-footer></main-footer> -->
+    <country-fact :facts="facts"></country-fact>
+    <question-holder :questions="questions" :answer="answer"></question-holder>
+    <main-footer></main-footer>
   </div>
 </template>
 

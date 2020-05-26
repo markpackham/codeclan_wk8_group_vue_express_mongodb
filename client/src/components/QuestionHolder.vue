@@ -1,13 +1,13 @@
 <template>
   <div class="country-quiz">
-      <button v-on:click="nextQuestion">Next question</button>
+      <h2>Country Quiz</h2>
+      <button v-on:click="nextQuestion">Get a question</button>
       <div v-if="aQuestion">
-      <p>{{decodeURIComponent(aQuestion)}}</p>
+      <p>{{decodeURIComponent(aQuestion)}}
+        <span class='highlight-response' v-if='response'>{{response}}</span></p>
       <ul v-for="(answer, index) in allAnswers" :key="index">
               <li><button v-on:click="handleAnswer(answer)">{{decodeURIComponent(answer)}}</button></li>
         </ul>
-        <span class='highlight-correct' v-if='answer'>CORRECT!</span>
-        <span class='highlight-incorrect' v-if='!answer'>WRONG, try again!</span>
       </div>
   </div>
 </template>
@@ -23,13 +23,15 @@ export default {
             aQuestion: "",
             correctAnswer: '',
             allAnswers: [],
-            answer: ""
+            answer: "",
+            response: ""
         }
     },
     computed: {
     },
     methods: {
         nextQuestion() {
+            this.response = ''
             let randomNum = Math.floor(Math.random() * this.questions.length + 1);
             this.aQuestion = this.questions[randomNum].question;
             this.correctAnswer = this.questions[randomNum].correct_answer;
@@ -53,9 +55,9 @@ export default {
             this.answer = answer
             console.log(this.answer)
             if(this.answer === this.correctAnswer){
-                this.answer = true
+                this.response = "CORRECT"
             }else{
-                this.answer = false
+                this.response = "That is INCORRECT"
             }
             console.log(this.answer)
             eventBus.$emit('answer-selected', this.answer);
