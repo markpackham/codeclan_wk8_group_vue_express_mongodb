@@ -32,7 +32,7 @@ export default {
       this.myFact = "";
     },
     onDeleteAll() {
-      eventBus.$emit("submit-fact", this.$data);
+      eventBus.$emit("delete-all", this.$data);
       this.myFact = "";
     }
   }

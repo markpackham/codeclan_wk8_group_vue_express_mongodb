@@ -48,6 +48,20 @@ const createRouter = function (collection) {
       });
   });
 
+  // DESTROY ALL
+  router.delete("/", (req, res) => {
+    collection
+      .remove({})
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   return router;
 };
 
