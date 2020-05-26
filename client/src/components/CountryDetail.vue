@@ -51,12 +51,6 @@
           </ul>
         </div>
       </div>
-      <p>
-        <a
-          target="_blank"
-          :href="`https://www.cia.gov/library/publications/the-world-factbook/geos/${country.alpha2Code.toLowerCase()}.html`"
-        >CIA Factbook &#x1F4DA;</a>
-      </p>
     </div>
   </div>
 </template>
