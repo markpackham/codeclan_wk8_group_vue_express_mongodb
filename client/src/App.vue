@@ -127,6 +127,7 @@ export default {
     });
 
     eventBus.$on("delete-all", payload =>{
+      this.facts = [],
       CountryService.deleteAll();
     })
   }

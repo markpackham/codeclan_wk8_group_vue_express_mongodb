@@ -32,6 +32,7 @@ export default {
       this.myFact = "";
     },
     onDeleteAll() {
+      alert("You have deleted every single country fact!");
       eventBus.$emit("delete-all", this.$data);
       this.myFact = "";
     }
