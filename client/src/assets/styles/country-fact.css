@@ -57,6 +57,11 @@ Imported by components/CountryFact.vue
   margin: 7px;
 }
 
+.getFactLink a{
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
 .country-fact-form input {
   margin-top: 1rem;
   padding: 0.3rem;
