@@ -52,6 +52,20 @@
               <li>&#128176; {{ cty.name }}</li>
             </ul>
           </ul>
+          <br>
+          <iframe
+          class="country-frame"
+        width=""
+        height=""
+        frameborder="0"
+        scrolling="yes"
+        marginheight="0"
+        marginwidth="0"
+        :src="
+          `http://www.openlinkmap.org/small.php?lat=${country.latlng[0]}&lon=${country.latlng[1]}&zoom=4`
+        "
+        style="border: 1px solid black"
+      ></iframe>
         </div>
       </div>
       <p>
