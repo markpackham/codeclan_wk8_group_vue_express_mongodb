@@ -2,9 +2,9 @@
   <div class="country-quiz">
       <button v-on:click="nextQuestion">Next question</button>
       <div v-if="aQuestion">
-      <p>{{aQuestion}}</p>
+      <p>{{decodeURIComponent(aQuestion)}}</p>
       <ul v-for="(answer, index) in allAnswers" :key="index">
-              <li><button v-on:click="handleAnswer(answer)">{{answer}}</button></li>
+              <li><button v-on:click="handleAnswer(answer)">{{decodeURIComponent(answer)}}</button></li>
         </ul>
         <span class='highlight-correct' v-if='answer'>CORRECT!</span>
         <span class='highlight-incorrect' v-if='!answer'>WRONG DUMBASS!</span>

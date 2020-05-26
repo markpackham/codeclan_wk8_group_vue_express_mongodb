@@ -71,7 +71,7 @@ export default {
     },
     getQuestions: function() {
       fetch(
-        "https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple"
+        "https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple&encode=url3986"
       )
         .then(res => res.json())
         .then(questions => {
