@@ -9,7 +9,7 @@
         v-model="myFact"
         required
       />
-      <button>Add a country fact</button>
+      <button>Add a country fact &#10133;</button>
     </form>
     <form v-on:submit.prevent="onDeleteAll">
       <button class="btn-danger">Delete ALL countries &#128128;</button>
