@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <!-- <main-header></main-header> -->
+    <main-header></main-header>
     <div class="main-container">
       <div v-if="!countries.length">
         <h3>Loading...</h3>
       </div>
       <europe-subregion-list :countries="countries"></europe-subregion-list>
-      <!-- <africa-subregion-list :countries="countries"></africa-subregion-list>
+      <africa-subregion-list :countries="countries"></africa-subregion-list>
       <asia-subregion-list :countries="countries"></asia-subregion-list>
       <america-subregion-list :countries="countries"></america-subregion-list>
-      <oceania-subregion-list :countries="countries"></oceania-subregion-list> -->
+      <oceania-subregion-list :countries="countries"></oceania-subregion-list>
       <country-detail :country="selectedCountry"></country-detail>
       <question-holder :questions="questions" :answer="answer"></question-holder>
     </div>
     <country-fact :facts="facts"></country-fact>
-    <!-- <main-footer></main-footer> -->
+    <main-footer></main-footer>
   </div>
 </template>
 
@@ -68,9 +68,13 @@ export default {
         });
     },
     getQuestions: function() {
-      fetch("https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple")
+      fetch(
+        "https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple"
+      )
         .then(res => res.json())
-        .then(questions => {this.questions = questions.results})
+        .then(questions => {
+          this.questions = questions.results;
+        })
         .catch(error => {
           handleError(error);
         });
@@ -104,6 +108,7 @@ export default {
     }
   },
   mounted() {
+    // INDEX
     this.getCountries();
     this.fetchFacts();
     this.getQuestions();
@@ -116,12 +121,14 @@ export default {
       this.selectedCountry = null;
     });
 
+    // CREATE
     eventBus.$on("submit-fact", facts => {
       CountryService.addFact(facts).then(factWithId =>
         this.facts.push(factWithId)
       );
     });
 
+    // DELETE ONE
     eventBus.$on("delete-fact", id => {
       CountryService.deleteFact(id);
       const index = this.facts.findIndex(fact => fact._id === id);
@@ -130,8 +137,12 @@ export default {
 
     eventBus.$on('answer-selected', response => {
       this.answer = response
-    })
+    });
 
+    // DELETE ALL
+    eventBus.$on("delete-all", payload => {
+      (this.facts = []), CountryService.deleteAll();
+    });
   }
 };
 </script>

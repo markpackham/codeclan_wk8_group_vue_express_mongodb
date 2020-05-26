@@ -18,19 +18,6 @@ const createRouter = function (collection) {
       });
   });
 
-  // SHOW (Used for Testing only)
-  router.get("/:id", (req, res) => {
-    const id = req.params.id;
-    collection
-      .findOne({ _id: ObjectID(id) })
-      .then((doc) => res.json(doc))
-      .catch((err) => {
-        console.error(err);
-        res.status(500);
-        res.json({ status: 500, error: err });
-      });
-  });
-
   // CREATE
   router.post("/", (req, res) => {
     const newFact = req.body;
@@ -51,6 +38,20 @@ const createRouter = function (collection) {
     const id = req.params.id;
     collection
       .deleteOne({ _id: ObjectID(id) })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
+  // DESTROY ALL
+  router.delete("/", (req, res) => {
+    collection
+      .remove({})
       .then((result) => {
         res.json(result);
       })
