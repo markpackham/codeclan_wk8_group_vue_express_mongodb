@@ -22,7 +22,7 @@ export default {
             aQuestion: "",
             correctAnswer: '',
             allAnswers: [],
-            answer: "Billy Bob"
+            answer: ""
         }
     },
     computed: {
@@ -41,7 +41,6 @@ export default {
             this.allAnswers.splice(2, 1, this.questions[randomNum].incorrect_answers[1])
             this.allAnswers.splice(3, 1, this.questions[randomNum].incorrect_answers[2])
             this.allAnswers.sort()
-            this.answer = "Hello world"
         },
         handleAnswer(answer) {
             this.answer = answer
