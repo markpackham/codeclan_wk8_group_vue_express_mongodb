@@ -42,7 +42,7 @@ The BBC are looking to improve their online offering of educational content by d
 
 4. Run the Express server, `npm run server:dev` and visit this url to make sure the data from the seeds file is there, `http://localhost:3000/api/facts/`
 
-* Now you can now either un the client locally going into the client folder running `npm run serve` then go most likely to `http://localhost:8080/` in your browser
+* Now you can now either run the client locally going into the client folder running `npm run serve` then go most likely to `http://localhost:8080/` in your browser
 
 * OR you could run a production version of the site which has performance improvements such as CSS and JS compressed.
 
