@@ -21,10 +21,10 @@
 
 <script>
 import { eventBus } from "@/main.js";
+import CentralAsiaList from "./AsiaComponents/CentralAsiaList";
 import EasternAsiaList from "./AsiaComponents/EasternAsiaList";
 import SouthernAsiaList from "./AsiaComponents/SouthernAsiaList";
 import SouthEasternAsiaList from "./AsiaComponents/SouthEasternAsiaList";
-import CentralAsiaList from "./AsiaComponents/CentralAsiaList";
 import WesternAsiaList from "./AsiaComponents/WesternAsiaList";
 
 export default {
@@ -38,10 +38,10 @@ export default {
   },
   props: ["countries"],
   components: {
-    "eastern-asia-list": EasternAsiaList,
-    "south-eastern-asia-list": SouthEasternAsiaList,
     "central-asia-list": CentralAsiaList,
+    "eastern-asia-list": EasternAsiaList,
     "southern-asia-list": SouthernAsiaList,
+    "south-eastern-asia-list": SouthEasternAsiaList,
     "western-asia-list": WesternAsiaList
   },
   methods: {
@@ -54,10 +54,10 @@ export default {
       eventBus.$emit("null-selected", this.selectedCountry);
     },
     notTheRegion() {
-      eventBus.$emit("not-region-europe", this.notRegion);
       eventBus.$emit("not-region-africa", this.notRegion);
-      eventBus.$emit("not-region-oceania", this.notRegion);
       eventBus.$emit("not-region-america", this.notRegion);
+      eventBus.$emit("not-region-europe", this.notRegion);
+      eventBus.$emit("not-region-oceania", this.notRegion);
     }
   },
   computed: {},

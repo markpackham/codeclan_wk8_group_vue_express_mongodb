@@ -10,9 +10,9 @@
     <br />
     <div class="america-subregion-container">
       <caribbean-list :countries="countries" :countryFrom="countryFrom"></caribbean-list>
-      <south-america-list :countries="countries" :countryFrom="countryFrom"></south-america-list>
       <central-america-list :countries="countries" :countryFrom="countryFrom"></central-america-list>
       <northern-america-list :countries="countries" :countryFrom="countryFrom"></northern-america-list>
+      <south-america-list :countries="countries" :countryFrom="countryFrom"></south-america-list>
     </div>
   </div>
 </template>
@@ -20,9 +20,9 @@
 <script>
 import { eventBus } from "@/main.js";
 import CaribbeanList from "./AmericaComponents/CaribbeanList";
-import SouthAmericaList from "./AmericaComponents/SouthAmericaList";
 import CentralAmericaList from "./AmericaComponents/CentralAmericaList";
 import NorthernAmericaList from "./AmericaComponents/NorthernAmericaList";
+import SouthAmericaList from "./AmericaComponents/SouthAmericaList";
 
 export default {
   name: "america-subregion-list",
@@ -36,9 +36,9 @@ export default {
   props: ["countries"],
   components: {
     "caribbean-list": CaribbeanList,
-    "south-america-list": SouthAmericaList,
     "central-america-list": CentralAmericaList,
-    "northern-america-list": NorthernAmericaList
+    "northern-america-list": NorthernAmericaList,
+    "south-america-list": SouthAmericaList
   },
   methods: {
     handleSelectRegion(name) {
@@ -50,10 +50,10 @@ export default {
       eventBus.$emit("null-selected", this.selectedCountry);
     },
     notTheRegion() {
-      eventBus.$emit("not-region-europe", this.notRegion);
       eventBus.$emit("not-region-africa", this.notRegion);
-      eventBus.$emit("not-region-oceania", this.notRegion);
       eventBus.$emit("not-region-asia", this.notRegion);
+      eventBus.$emit("not-region-europe", this.notRegion);
+      eventBus.$emit("not-region-oceania", this.notRegion);
     }
   },
   computed: {},

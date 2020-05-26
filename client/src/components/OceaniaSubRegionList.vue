@@ -50,10 +50,10 @@ export default {
       eventBus.$emit("null-selected", this.selectedCountry);
     },
     notTheRegion() {
-      eventBus.$emit("not-region-europe", this.notRegion);
-      eventBus.$emit("not-region-asia", this.notRegion);
       eventBus.$emit("not-region-africa", this.notRegion);
       eventBus.$emit("not-region-america", this.notRegion);
+      eventBus.$emit("not-region-asia", this.notRegion);
+      eventBus.$emit("not-region-europe", this.notRegion);
     }
   },
   computed: {},
