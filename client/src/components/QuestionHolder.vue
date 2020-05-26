@@ -47,6 +47,11 @@ export default {
             this.answer = answer
             eventBus.$emit('answer-selected', this.answer);
             console.log(this.answer)
+            if(this.answer === this.correctAnswer){
+                console.log("Yey you got it right!")
+            }else{
+                console.log("WRONG!!!")
+            }
         }
     },
     mounted(){
