@@ -1,6 +1,6 @@
 <template>
   <div class="country-quiz">
-      <h2>Country Quiz</h2>
+      <h3>Country Quiz</h3>
       <button v-on:click="nextQuestion">Get a question</button>
       <div v-if="aQuestion">
       <p>{{decodeURIComponent(aQuestion)}}
