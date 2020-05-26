@@ -3,7 +3,7 @@
     <h3>Country Facts</h3>
     <p class="getFactLink">
       <a href="#" v-on:click="handleClick">Get a fact &#127891;</a> &nbsp; &nbsp;
-      <a v-if="aFactId" href="#" v-on:click="handleDelete">Delete the fact &#128128;</a>
+      <a v-if="aFactId" href="#" class="btn-danger" v-on:click="handleDelete">Delete the fact &#128163;</a>
       <br />
     </p>
     <p id="fact-area">Country Fact: {{aFact}}</p>

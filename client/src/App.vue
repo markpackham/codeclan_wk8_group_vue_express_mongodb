@@ -125,6 +125,10 @@ export default {
       const index = this.facts.findIndex(fact => fact._id === id);
       this.facts.splice(index, 1);
     });
+
+    eventBus.$on("delete-all", payload =>{
+      CountryService.deleteAll();
+    })
   }
 };
 </script>
