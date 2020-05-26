@@ -3,8 +3,8 @@
       <button v-on:click="nextQuestion">Next question</button>
       <div v-if="aQuestion">
       <p>{{aQuestion}}</p>
-      <ul v-for="(anything, index) in allAnswers" :key="index">
-              <li><button v-on:click="handleAnswer">{{anything}}</button></li>
+      <ul v-for="(answer, index) in allAnswers" :key="index">
+              <li><button v-on:click="handleAnswer(answer)">{{answer}}</button></li>
         </ul>
         <!-- <button v-on:click="showAnswer">Show answer</button> -->
       </div>
@@ -43,11 +43,14 @@ export default {
             this.allAnswers.sort()
             this.answer = "Hello world"
         },
-        handleAnswer() {
-            this.answer = ""
+        handleAnswer(answer) {
+            this.answer = answer
             eventBus.$emit('answer-selected', this.answer);
             console.log(this.answer)
         }
+    },
+    mounted(){
+
     }
 }
 </script>
