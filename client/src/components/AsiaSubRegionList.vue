@@ -10,10 +10,10 @@
     </ul>
     <br />
     <div class="asia-subregion-container">
+      <central-asia-list :countries="countries" :countryFrom="countryFrom"></central-asia-list>
       <eastern-asia-list :countries="countries" :countryFrom="countryFrom"></eastern-asia-list>
       <southern-asia-list :countries="countries" :countryFrom="countryFrom"></southern-asia-list>
       <south-eastern-asia-list :countries="countries" :countryFrom="countryFrom"></south-eastern-asia-list>
-      <central-asia-list :countries="countries" :countryFrom="countryFrom"></central-asia-list>
       <western-asia-list :countries="countries" :countryFrom="countryFrom"></western-asia-list>
     </div>
   </div>

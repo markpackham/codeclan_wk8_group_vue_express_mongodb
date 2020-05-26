@@ -4,8 +4,8 @@
     <ul>
       <li v-on:click="handleSelectRegion('caribbean')">Caribbean</li>
       <li v-on:click="handleSelectRegion('central')">Central America</li>
-      <li v-on:click="handleSelectRegion('south')">South America</li>
       <li v-on:click="handleSelectRegion('northern')">Northern America</li>
+      <li v-on:click="handleSelectRegion('south')">South America</li>
     </ul>
     <br />
     <div class="america-subregion-container">
