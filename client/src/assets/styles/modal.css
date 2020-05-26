@@ -30,11 +30,15 @@ input[type="checkbox"]:checked {
 }
 
 .country_modal ul li {
-  list-style: square;
+  list-style: disc;
+}
+
+.country_modal ul ul li{
+  list-style: none;
 }
 
 .country_modal ul li:hover {
-  list-style: square;
+  list-style: disc;
   cursor: none;
   opacity: 1;
   font-weight: normal;
