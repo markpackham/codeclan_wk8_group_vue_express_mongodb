@@ -66,9 +66,13 @@ export default {
         });
     },
     getQuestions: function() {
-      fetch("https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple")
+      fetch(
+        "https://opentdb.com/api.php?amount=50&category=22&difficulty=medium&type=multiple"
+      )
         .then(res => res.json())
-        .then(questions => {this.questions = questions.results})
+        .then(questions => {
+          this.questions = questions.results;
+        })
         .catch(error => {
           handleError(error);
         });
@@ -102,6 +106,7 @@ export default {
     }
   },
   mounted() {
+    // INDEX
     this.getCountries();
     this.fetchFacts();
     this.getQuestions();
@@ -114,22 +119,24 @@ export default {
       this.selectedCountry = null;
     });
 
+    // CREATE
     eventBus.$on("submit-fact", facts => {
       CountryService.addFact(facts).then(factWithId =>
         this.facts.push(factWithId)
       );
     });
 
+    // DELETE ONE
     eventBus.$on("delete-fact", id => {
       CountryService.deleteFact(id);
       const index = this.facts.findIndex(fact => fact._id === id);
       this.facts.splice(index, 1);
     });
 
-    eventBus.$on("delete-all", payload =>{
-      this.facts = [],
-      CountryService.deleteAll();
-    })
+    // DELETE ALL
+    eventBus.$on("delete-all", payload => {
+      (this.facts = []), CountryService.deleteAll();
+    });
   }
 };
 </script>
