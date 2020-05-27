@@ -1,0 +1,48 @@
+I will roughly follow this:
+
+
+Client (Front end):  
+
+One thing on the Front-end that I worked on was the map feature.
+
+Originally we had on our extensions list to try to use VueLeaflet to add a map to the app.
+
+I did manage to use VueLeaflet to display an interactive map on the page but in the end, at the suggestion of my teammate Mark, I added the map via Iframe.
+
+I had somehow never heard of it before but Iframe is a HTML feature which basically lets you embed things on your page.
+
+I'll show you a picture to explain why I used an Iframe as opposed to VueLeaflet.
+
+As the picture shows, the Iframe is really simple.  With the exception of styling, it was a 1 line solution compared to VueLeaflet which was over 100 lines and I spent hours stuck on.
+
+You may have noticed in demo that if you click a country the map automatically hones in on it.  I found that hard in VueLeaflet but it was simple to do in an Iframe.  
+
+I really like the map feature.  It's a way of giving interactivity to the page.  
+
+A picture can tell a thousand words, so seeing a picture of a country's map can tell the us a lot.  The countries bordering it, where cities and rivers are, and a lot more.  The user can learn a lot from a map.
+
+
+Server (Back end):  
+
+Here is a picture of the back-end files.  There aren't many.  Most of our app was through Vue.
+
+The seeds file is where I manually added almost 100 facts for our random fact feature.
+
+I actually had fun doing this because I think the facts are really interesting and I hope that users of our app would agree.
+
+Here is the router file where we worked together to create CRUD routes.
+
+There is the server.js file.  We made declarations there and there is the connection to the database.
+
+
+Final stuff:
+
+To show you how much work we did, here is a side by side image.  
+
+On the left is our initial file structure.  On the right is our final file structure.  It grew a lot over the course of the project.
+
+On retrospect, we see that we had a lot of components.  They were all extremely similar and somewhat copied and pasted.  We could have refactored to have much less components resulting in a simpler file structure.
+
+On that note, there are a few other things we might have tried to improve on if we had more time.  We would have spent more time on CSS.  I think it'd also have been cool if clicking on a country played it's national anthem, but that would likely have been challenging.
+
+So I think that's all we have to say.  We are now willing to answer questions if anyone has any?

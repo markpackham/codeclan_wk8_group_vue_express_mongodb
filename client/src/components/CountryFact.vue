@@ -2,7 +2,7 @@
   <div class="country-fact">
     <h3>Country Facts</h3>
     <p class="getFactLink">
-      <a v-if="this.facts.length > 0" href="#" v-on:click.prevent="handleClick">Get a fact &#127891;</a> &nbsp; &nbsp;
+      <a v-if="this.facts.length > 0" href="#" class="btn-get" v-on:click.prevent="handleClick">Get a fact &#127891;</a> &nbsp; &nbsp;
       <a v-if="aFactId && this.facts.length > 0" href="#" class="btn-danger" v-on:click.prevent="handleDelete">Delete the fact &#128163;</a>
       <br />
     </p>
