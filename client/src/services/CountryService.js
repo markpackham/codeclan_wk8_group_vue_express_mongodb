@@ -25,10 +25,4 @@ export default {
     });
   },
 
-  // DESTROY ALL
-  deleteAll(){
-    return fetch(baseURL, {
-      method: "DELETE",
-    });
-  }
 };
