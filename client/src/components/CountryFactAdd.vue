@@ -11,9 +11,6 @@
       />
       <button>Add a country fact &#10133;</button>
     </form>
-    <form v-on:submit.prevent="onDeleteAll">
-      <button class="btn-danger">Delete ALL countries &#128128;</button>
-    </form>
   </div>
 </template>
 
@@ -29,11 +26,6 @@ export default {
   methods: {
     onSubmit() {
       eventBus.$emit("submit-fact", this.$data);
-      this.myFact = "";
-    },
-    onDeleteAll() {
-      alert("You have deleted every single country fact!");
-      eventBus.$emit("delete-all", this.$data);
       this.myFact = "";
     }
   }
