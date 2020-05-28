@@ -43,13 +43,11 @@ export default {
         },
         handleAnswer(answer) {
             this.answer = answer
-            console.log(this.answer)
             if(this.answer === this.correctAnswer){
                 this.response = "CORRECT"
             }else{
                 this.response = "That is INCORRECT"
             }
-            console.log(this.answer)
             eventBus.$emit('answer-selected', this.answer);
         }
     },

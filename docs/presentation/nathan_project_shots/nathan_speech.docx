@@ -1,0 +1,38 @@
+Thank you Mark and hello everybody, I'm Nathan Kirley.
+
+As Mark alluded to I'll be going a bit more in-depth in regards to the quiz and the code that made it.
+
+[On demo page (1quiz)]
+So like Neil mentioned, the quiz was an extension we added, it's not perfect but we're happy with what we produced. We created the quiz using one of the 4 APIs Mark talked about, in this case the Open Trivia Database. Neil and I worked on this quiz and we'd like to give a shout-out to a senior-developer friend of ours, Mr R. Bennett, who gave us a few tips and plenty of inspiration.
+
+Ok, so when we click get a question, a random question is generated from the API with 4 choices, we decided to have every question as a multiple choice.
+[Click get a question]
+(2quiz)
+Here we have a randomly generated question with the appropriate choices for that question. 
+If we select an incorrect answer [select incorrect answer (3quiz)] the message 'That is INCORRECT' will appear as it will when we select the other 2 incorrect answers.
+
+Of course when we select the correct answer [select correct answer (4quiz)] the message 'CORRECT' will appear. Ideally we would have a button asking if we wanted another question, but we finished this off on our last day before our own code-freeze, so didn't manage to add that in.
+
+But we can still get another question by clicking 'Get a question' again [select get a question (5quiz)].
+
+I'd like to talk about the two main difficulties that we came across during this extension. Firstly, we had an issue with encoding. That is, that sometimes when questions had an apostrophe or other forms of punctuation, unsafe characters let's say the question would be printed with ampersands and hashes, and did not look nice at all.
+
+Secondly, we were having difficulty having the questions in a random order, the correct answer would always be printed first. Which is obviously no use, if you want to have any credibility as a quizzer.
+
+So let's take a look at how we resolved these problems.
+
+(6fetch_questions) Firstly Neil, added this piece of basic URL encoding syntax to the end of the fetch. This URL Encoding is a way we can safely transfer "unsafe" characters in the URL.
+
+And then
+(7quiz_template)
+We used JS's decodeAPIComponent to decode the result that was put into our app.
+
+For the second problem we created an empty array of allAnswers. So when we clicked the question button, we used this nextQuestion method.
+
+(8quiz_question)
+ We have a random number which we use as the index inside the API to generate a question. We are then able to access the correct answer and 3 incorrect answers, which we spliced into our allAnswers array. And finally, we used the sort method. So that the answers are listed either alphabetically or numerically, which helps make the answers appear to be more random. We also have response to be an empty string, which I will explain now.
+
+(9quiz_answer)
+This is our method for handling an answer. We pass in answer and set it to this.answer so that whatever we click will be this.answer. We now rely on strict equality to see whether it is the correct answer or not and depending on the result one of these messages will be printed. Response is then set to be an empty string in nextQuestion so that we don't have any messages displaying for the following question.
+
+So that's it for our favourite piece of code on the client side, I'll now hand the mike to Cameron. Thank you.
