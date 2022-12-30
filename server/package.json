@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "cors": "^2.8.5",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.4"
   },
   "description": ""
